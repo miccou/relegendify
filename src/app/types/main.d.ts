@@ -1,0 +1,1 @@
+/// <reference path="./relegendable.d.ts" />
