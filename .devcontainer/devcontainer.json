@@ -1,0 +1,17 @@
+{
+    "name": "${containerWorkspaceFolderBasename}",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "runArgs": [
+      "--name",
+      "${containerWorkspaceFolderBasename}"
+    ],
+    "extensions": [
+      "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
+      "esbenp.prettier-vscode"
+    ],
+    "remoteUser": "root",
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && git config --global core.autocrlf true && chmod +x .devcontainer/install-gh.sh && .devcontainer/install-gh.sh"
+  }
