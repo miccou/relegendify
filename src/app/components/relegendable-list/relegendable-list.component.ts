@@ -1,17 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-relegendable-list',
-  templateUrl: './relegendable-list.component.html'
+  templateUrl: './relegendable-list.component.html',
 })
 export class RelegendableListComponent implements OnInit {
   relegendables: Relegendable[] = [];
- 
-  ngOnInit(){
 
-  }
+  ngOnInit() {}
 
-  addNew(){
-    this.relegendables.push({} as Relegendable);
+  addNew() {
+    var newRelegendable: Relegendable = { text: 'hello world' };
+    this.relegendables.push(newRelegendable);
   }
 }

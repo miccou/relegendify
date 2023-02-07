@@ -1,3 +1,3 @@
-declare class Relegendable {
-    text: string;
+interface Relegendable {
+  text: string;
 }
