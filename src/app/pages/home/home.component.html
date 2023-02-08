@@ -1,9 +1,34 @@
 <header
-  class="flex-grow text-violet-800 bg-slate-100 p-8 mb-8 text-lg font-semibold select-none"
+  class="flex-grow-0 bg-violet-800 text-slate-50 p-4 text-lg font-semibold select-none flex gap-8 items-center"
 >
-  Relegendables Maker
+  <div>Relegendables Maker</div>
+
+  <nav class="flex text-sm gap-4">
+    <a
+      class="bg-violet-200 text-slate-800 p-2 rounded-md hover:bg-violet-300"
+      href="/"
+      >Create Relegendables</a
+    >
+    <a
+      class="bg-violet-200 text-slate-800 p-2 rounded-md hover:bg-violet-300"
+      href="/about"
+      >About</a
+    >
+    <a
+      class="bg-violet-200 text-slate-800 p-2 rounded-md hover:bg-violet-300"
+      href="/"
+      >Open an issue</a
+    >
+    <a
+      class="bg-violet-200 text-slate-800 p-2 rounded-md hover:bg-violet-300"
+      href="/"
+      >Contribute</a
+    >
+  </nav>
 </header>
 
-<app-relegendable-list class="flex"></app-relegendable-list>
+<app-relegendable-list class="flex flex-grow mb-4 mt-4"></app-relegendable-list>
 
-<footer></footer>
+<footer class="text-center mb-2 text-slate-600 text-sm">
+  Made with 💖 by Miccou
+</footer>
