@@ -17,7 +17,7 @@ ENV SHELL /bin/zsh
 RUN mkdir -p ~/dev/dotfiles
 RUN git clone https://github.com/miccou/dotfiles.git ~/dev/dotfiles
 
- # Run the installation script  
+# Run the installation script  
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
 # Copy custom dotfile
@@ -28,7 +28,7 @@ RUN cat ~/dev/dotfiles/.zshrc > ~/.zshrc
 # RUN unzip awscliv2.zip && sudo ./aws/install && rm awscliv2.zip
 
 # Install ionic
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli@15.1.4
 
 # Keep container alive
 CMD exec /bin/bash -c "echo Container started ; trap \"exit 0\" 15; while sleep 1 & wait $!; do :; done"
