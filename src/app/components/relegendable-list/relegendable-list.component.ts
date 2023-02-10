@@ -10,7 +10,12 @@ export class RelegendableListComponent implements OnInit {
   ngOnInit() {}
 
   addNew() {
-    var newRelegendable: Relegendable = { text: 'hello world' };
+    var newRelegendable: Relegendable = {
+      legend: '',
+      legendColour: '',
+      legendPosition: 'centre',
+      keycapColour: '',
+    };
     this.relegendables.push(newRelegendable);
   }
 }

@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { RelegendableComponent } from './components/relegendable/relegendable.component';
 import { RelegendableListComponent } from './components/relegendable-list/relegendable-list.component';
 import { RelegendableControlsComponent } from './components/relegendable-controls/relegendable-controls.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { RelegendableControlsComponent } from './components/relegendable-control
     HomeComponent,
     RelegendableComponent,
     RelegendableListComponent,
-    RelegendableControlsComponent
+    RelegendableControlsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
