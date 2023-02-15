@@ -8,6 +8,7 @@ import { RelegendableComponent } from './components/relegendable/relegendable.co
 import { RelegendableListComponent } from './components/relegendable-list/relegendable-list.component';
 import { RelegendableControlsComponent } from './components/relegendable-controls/relegendable-controls.component';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { FormsModule } from '@angular/forms';
     RelegendableListComponent,
     RelegendableControlsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule],
   providers: [],
   bootstrap: [AppComponent],
 })
