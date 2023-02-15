@@ -1,10 +1,22 @@
-import { Component, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import {
+  LegendPositionOptions,
+  Relegendable,
+} from 'src/app/types/relegendable';
 
 @Component({
   selector: 'app-relegendable',
   templateUrl: './relegendable.component.html',
 })
 export class RelegendableComponent {
-  @Input() relegendable: Relegendable = {legend: '', legendColour: '', legendPosition :'centre', keycapColour :''};
+  @Input() relegendable: Relegendable = {
+    legend: '',
+    legendColour: '',
+    legendPosition: LegendPositionOptions.centre,
+    keycapColour: '',
+  };
+
+  LegendPositionOptions = LegendPositionOptions;
+
+  ngOnInit() {}
 }
