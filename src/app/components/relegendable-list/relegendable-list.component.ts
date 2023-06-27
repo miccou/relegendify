@@ -12,7 +12,48 @@ export class RelegendableListComponent implements OnInit {
   relegendables: Relegendable[] = [];
 
   ngOnInit() {
-    this.addNew();
+    var newRelegendable: Relegendable = {
+      legend: 'aaa\naaaaa',
+      legendColour: '',
+      legendPosition: LegendPositionOptions.left,
+      keycapColour: '',
+    };
+    this.relegendables.push(newRelegendable);
+    // var newRelegendable: Relegendable = {
+    //   legend: 'aaa\naaaaa',
+    //   legendColour: '',
+    //   legendPosition: LegendPositionOptions.right,
+    //   keycapColour: '',
+    // };
+    // this.relegendables.push(newRelegendable);
+    // var newRelegendable: Relegendable = {
+    //   legend: 'aaa\naaaaa',
+    //   legendColour: '',
+    //   legendPosition: LegendPositionOptions.top,
+    //   keycapColour: '',
+    // };
+    // this.relegendables.push(newRelegendable);
+    // var newRelegendable: Relegendable = {
+    //   legend: 'aaa\naaaaa',
+    //   legendColour: '',
+    //   legendPosition: LegendPositionOptions.bottom,
+    //   keycapColour: '',
+    // };
+    // this.relegendables.push(newRelegendable);
+    // var newRelegendable: Relegendable = {
+    //   legend: 'aaa\naaaaa',
+    //   legendColour: '',
+    //   legendPosition: LegendPositionOptions.centre,
+    //   keycapColour: '',
+    // };
+    // this.relegendables.push(newRelegendable);
+    // var newRelegendable: Relegendable = {
+    //   legend: 'aaa\naaaaa',
+    //   legendColour: '',
+    //   legendPosition: LegendPositionOptions.centre,
+    //   keycapColour: '',
+    // };
+    // this.relegendables.push(newRelegendable);
   }
 
   addNew() {
