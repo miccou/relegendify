@@ -19,8 +19,8 @@ export class RelegendableComponent {
 
   ngOnInit() {}
 
-  relegendableClass(pos: string): { parent: string; child: string } {
-    switch (pos) {
+  relegendableClass(): { parent: string; child: string } {
+    switch (this.relegendable.legendPosition) {
       case LegendPositionOptions.centre:
       default:
         return { parent: 'flex items-center justify-center', child: '' };
@@ -41,6 +41,12 @@ export class RelegendableComponent {
       case LegendPositionOptions.right:
         return { parent: 'flex items-center justify-end', child: '' };
     }
+  }
+
+  fontSizeName(): string {
+    return `legend-${this.relegendable.legendFontSize
+      .toString()
+      .replace('.', '-')}px`;
   }
 
   onPositionSelected(position: keyof typeof LegendPositionOptions) {
