@@ -19,7 +19,7 @@ export class RelegendableListComponent implements OnInit {
       legendColour: '',
       legendPosition: LegendPositionOptions.centre,
       keycapColour: '',
-      legendFontSize: 12,
+      legendFontSize: 10,
     });
 
     this.relegendables.push({
@@ -27,7 +27,7 @@ export class RelegendableListComponent implements OnInit {
       legendColour: '',
       legendPosition: LegendPositionOptions.top,
       keycapColour: '',
-      legendFontSize: 12,
+      legendFontSize: 10,
     });
 
     this.relegendables.push({
@@ -35,7 +35,7 @@ export class RelegendableListComponent implements OnInit {
       legendColour: '',
       legendPosition: LegendPositionOptions.topLeft,
       keycapColour: '',
-      legendFontSize: 12,
+      legendFontSize: 10,
     });
 
     this.relegendables.push({
@@ -43,7 +43,7 @@ export class RelegendableListComponent implements OnInit {
       legendColour: '',
       legendPosition: LegendPositionOptions.topRight,
       keycapColour: '',
-      legendFontSize: 12,
+      legendFontSize: 10,
     });
 
     this.relegendables.push({
@@ -51,7 +51,7 @@ export class RelegendableListComponent implements OnInit {
       legendColour: '',
       legendPosition: LegendPositionOptions.bottom,
       keycapColour: '',
-      legendFontSize: 12,
+      legendFontSize: 10,
     });
 
     this.relegendables.push({
@@ -59,7 +59,7 @@ export class RelegendableListComponent implements OnInit {
       legendColour: '',
       legendPosition: LegendPositionOptions.bottomLeft,
       keycapColour: '',
-      legendFontSize: 12,
+      legendFontSize: 10,
     });
 
     this.relegendables.push({
@@ -67,7 +67,7 @@ export class RelegendableListComponent implements OnInit {
       legendColour: '',
       legendPosition: LegendPositionOptions.bottomRight,
       keycapColour: '',
-      legendFontSize: 12,
+      legendFontSize: 10,
     });
 
     this.relegendables.push({
@@ -75,7 +75,7 @@ export class RelegendableListComponent implements OnInit {
       legendColour: '',
       legendPosition: LegendPositionOptions.left,
       keycapColour: '',
-      legendFontSize: 12,
+      legendFontSize: 10,
     });
 
     this.relegendables.push({
@@ -83,7 +83,7 @@ export class RelegendableListComponent implements OnInit {
       legendColour: '',
       legendPosition: LegendPositionOptions.right,
       keycapColour: '',
-      legendFontSize: 12,
+      legendFontSize: 10,
     });
   }
 

@@ -1,4 +1,170 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+/* CSS classes for sizes between 4px and 14px in 0.5 steps */
+.legend-4px {
+  font-size: 4px;
+  line-height: normal;
+}
+.legend-4-5px {
+  font-size: 4.5px;
+  line-height: normal;
+}
+.legend-5px {
+  font-size: 5px;
+  line-height: normal;
+}
+.legend-5-5px {
+  font-size: 5.5px;
+  line-height: normal;
+}
+.legend-6px {
+  font-size: 6px;
+  line-height: normal;
+}
+.legend-6-5px {
+  font-size: 6.5px;
+  line-height: normal;
+}
+.legend-7px {
+  font-size: 7px;
+  line-height: normal;
+}
+.legend-7-5px {
+  font-size: 7.5px;
+  line-height: normal;
+}
+.legend-8px {
+  font-size: 8px;
+  line-height: normal;
+}
+.legend-8-5px {
+  font-size: 8.5px;
+  line-height: normal;
+}
+.legend-9px {
+  font-size: 9px;
+  line-height: normal;
+}
+.legend-9-5px {
+  font-size: 9.5px;
+  line-height: normal;
+}
+.legend-10px {
+  font-size: 10px;
+  line-height: normal;
+}
+.legend-10-5px {
+  font-size: 10.5px;
+  line-height: normal;
+}
+.legend-11px {
+  font-size: 11px;
+  line-height: normal;
+}
+.legend-11-5px {
+  font-size: 11.5px;
+  line-height: normal;
+}
+.legend-12px {
+  font-size: 12px;
+  line-height: normal;
+}
+.legend-12-5px {
+  font-size: 12.5px;
+  line-height: normal;
+}
+.legend-13px {
+  font-size: 13px;
+  line-height: normal;
+}
+.legend-13-5px {
+  font-size: 13.5px;
+  line-height: normal;
+}
+.legend-14px {
+  font-size: 14px;
+  line-height: normal;
+}
+.legend-14-5px {
+  font-size: 14.5px;
+  line-height: normal;
+}
+.legend-15px {
+  font-size: 15px;
+  line-height: normal;
+}
+.legend-15-5px {
+  font-size: 15.5px;
+  line-height: normal;
+}
+.legend-16px {
+  font-size: 16px;
+  line-height: normal;
+}
+.legend-16-5px {
+  font-size: 16.5px;
+  line-height: normal;
+}
+.legend-17px {
+  font-size: 17px;
+  line-height: normal;
+}
+.legend-17-5px {
+  font-size: 17.5px;
+  line-height: normal;
+}
+.legend-18px {
+  font-size: 18px;
+  line-height: normal;
+}
+.legend-18-5px {
+  font-size: 18.5px;
+  line-height: normal;
+}
+.legend-19px {
+  font-size: 19px;
+  line-height: normal;
+}
+.legend-19-5px {
+  font-size: 19.5px;
+  line-height: normal;
+}
+.legend-20px {
+  font-size: 20px;
+  line-height: normal;
+}
+.legend-20-5px {
+  font-size: 20.5px;
+  line-height: normal;
+}
+.legend-21px {
+  font-size: 21px;
+  line-height: normal;
+}
+.legend-21-5px {
+  font-size: 21.5px;
+  line-height: normal;
+}
+.legend-22px {
+  font-size: 22px;
+  line-height: normal;
+}
+.legend-22-5px {
+  font-size: 22.5px;
+  line-height: normal;
+}
+.legend-23px {
+  font-size: 23px;
+  line-height: normal;
+}
+.legend-23-5px {
+  font-size: 23.5px;
+  line-height: normal;
+}
+.legend-24px {
+  font-size: 24px;
+  line-height: normal;
+}
