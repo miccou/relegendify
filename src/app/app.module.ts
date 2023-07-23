@@ -9,6 +9,7 @@ import { RelegendableListComponent } from './components/relegendable-list/relege
 import { RelegendableControlsComponent } from './components/relegendable-controls/relegendable-controls.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { PositionPickerComponent } from './components/position-picker/position-picker.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
     RelegendableComponent,
     RelegendableListComponent,
     RelegendableControlsComponent,
+    PositionPickerComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule],
   providers: [],

@@ -1,28 +1,23 @@
-<div class="inline-block m-2 bg-slate-700 rounded-md p-2">
+<div class="inline-block m-2 bg-slate-700 rounded-md p-2" *ngIf="relegendable !== undefined">
   <!-- preview -->
   <div class="w-32 h-32 inline-block bg-red-200 select-none rounded-md mr-2 align-top p-1">
-    <!-- <div class="inline-block h-full w-full align-text-top whitespace-pre indent-0 {{
-        relegendable.legendPosition
-      }}"> -->
-    <div class="inline-block h-fit whitespace-pre-line">
-      {{ relegendable.legend }}
+    <div class="h-full w-full" [ngClass]="relegendableClass(relegendable.legendPosition).parent">
+      <div class="inline-block whitespace-pre-line" [ngClass]="relegendableClass(relegendable.legendPosition).child">
+        {{ relegendable.legend }}
+      </div>
     </div>
   </div>
 
   <!-- controls -->
   <div class="inline-block flex-col w-48 h-32 bg-green-200 select-none rounded-md align-top p-1 text-sm">
     <div>
-      <label class="">Legend:</label><textarea class="flex-initial w-full" type="text" cols="10" rows="2" wrap="hard"
-        maxlength="20" [(ngModel)]="relegendable.legend"></textarea>
+      <textarea class="flex-initial w-full resize-none" type="text" cols="10" rows="2" wrap="hard"
+        [(ngModel)]="relegendable.legend"></textarea>
     </div>
-    <div>
-      <label class="">Position:</label>
-      <select class="w-full" [(ngModel)]="relegendable.legendPosition">
-        <option *ngFor="let opt of LegendPositionOptions | keyvalue" value="{{ opt.value }}">
-          {{ opt.key }}
-        </option>
-      </select>
+
+    <div class="container mx-auto mt-0 w-fit">
+      <app-position-picker [position]="relegendable.legendPosition"
+        (positionSelected)="onPositionSelected($event)"></app-position-picker>
     </div>
   </div>
 </div>
-<!-- {{ relegendable | json }} -->
