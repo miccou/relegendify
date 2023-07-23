@@ -10,6 +10,7 @@ import { RelegendableControlsComponent } from './components/relegendable-control
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PositionPickerComponent } from './components/position-picker/position-picker.component';
+import { NgxColorsModule } from 'ngx-colors';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,13 @@ import { PositionPickerComponent } from './components/position-picker/position-p
     RelegendableControlsComponent,
     PositionPickerComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    CommonModule,
+    NgxColorsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
