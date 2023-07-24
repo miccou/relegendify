@@ -1,20 +1,16 @@
 <div
   class="bg-slate-700 m-2 inline-block rounded-md p-2"
-  *ngIf="relegendable !== undefined"
->
+  *ngIf="relegendable !== undefined">
   <!-- preview -->
   <div
-    class="flex h-32 w-full flex-col items-center justify-center print:items-end print:justify-end"
-  >
+    class="flex h-32 w-full flex-col items-center justify-center print:items-end print:justify-end">
     <div
       class="bg-white outline-black m-2 inline-block h-cherry w-cherry scale-[2] select-none p-1 align-top outline outline-1 print:w-cherry print:scale-100"
-      [ngClass]="fontSizeName()"
-    >
+      [ngClass]="fontSizeName()">
       <div class="h-full w-full" [ngClass]="relegendableClass().parent">
         <div
           class="inline-block whitespace-pre-line"
-          [ngClass]="relegendableClass().child"
-        >
+          [ngClass]="relegendableClass().child">
           {{ relegendable.legend }}
         </div>
       </div>
@@ -23,8 +19,7 @@
 
   <!-- controls -->
   <div
-    class="bg-green-200 inline-block h-32 w-48 select-none flex-col rounded-md p-1 align-top text-sm print:hidden"
-  >
+    class="bg-green-200 inline-block h-32 w-48 select-none flex-col rounded-md p-1 align-top text-sm print:hidden">
     <div>
       <textarea
         class="w-full flex-initial resize-none p-0.5"
@@ -32,21 +27,18 @@
         cols="10"
         rows="2"
         wrap="hard"
-        [(ngModel)]="relegendable.legend"
-      ></textarea>
+        [(ngModel)]="relegendable.legend"></textarea>
     </div>
 
     <div class="flex flex-row items-center justify-between px-3">
       <div class="w-fit">
         <app-position-picker
           [position]="relegendable.legendPosition"
-          (positionSelected)="onPositionSelected($event)"
-        ></app-position-picker>
+          (positionSelected)="onPositionSelected($event)"></app-position-picker>
       </div>
       <div class="w-fit">
         <app-align-picker
-          [(align)]="relegendable.legendAlign"
-        ></app-align-picker>
+          [(align)]="relegendable.legendAlign"></app-align-picker>
       </div>
     </div>
 
@@ -58,8 +50,7 @@
         id="legendFontSize"
         min="4"
         max="24"
-        step="0.5"
-      />
+        step="0.5" />
       <div class="ml-1 w-10">{{ relegendable.legendFontSize }}</div>
     </div>
   </div>
