@@ -23,7 +23,7 @@ export type LegendAlignOptionsType = keyof typeof LegendAlignOptions;
 export class Relegendable {
   legend: string = "Aa";
   legendPosition: LegendPositionOptions = LegendPositionOptions.topLeft;
-  legendFontSize: number = 8;
+  legendFontSize: number = 10;
   legendAlign: LegendAlignOptions = LegendAlignOptions.alignCentre;
   legendColour: string = "#123456";
   keycapColour: string = "#abcdef";
