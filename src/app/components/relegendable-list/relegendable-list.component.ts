@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import {
+  LegendAlignOptions,
   LegendPositionOptions,
   LegendPositionOptionsType,
   Relegendable,
@@ -13,87 +14,17 @@ export class RelegendableListComponent implements OnInit {
   relegendables: Relegendable[] = [];
 
   ngOnInit() {
-    // Create and push new relegendable objects for each legend position
-    this.relegendables.push({
-      legend: "aaa\naaaaa",
-      legendColour: "",
-      legendPosition: LegendPositionOptions.centre,
-      keycapColour: "",
-      legendFontSize: 10,
-    } as Relegendable);
-
-    this.relegendables.push({
-      legend: "aaa\naaaaa",
-      legendColour: "",
-      legendPosition: LegendPositionOptions.top,
-      keycapColour: "",
-      legendFontSize: 10,
-    } as Relegendable);
-
-    this.relegendables.push({
-      legend: "aaa\naaaaa",
-      legendColour: "",
-      legendPosition: LegendPositionOptions.topLeft,
-      keycapColour: "",
-      legendFontSize: 10,
-    } as Relegendable);
-
-    this.relegendables.push({
-      legend: "aaa\naaaaa",
-      legendColour: "",
-      legendPosition: LegendPositionOptions.topRight,
-      keycapColour: "",
-      legendFontSize: 10,
-    } as Relegendable);
-
-    this.relegendables.push({
-      legend: "aaa\naaaaa",
-      legendColour: "",
-      legendPosition: LegendPositionOptions.bottom,
-      keycapColour: "",
-      legendFontSize: 10,
-    } as Relegendable);
-
-    this.relegendables.push({
-      legend: "aaa\naaaaa",
-      legendColour: "",
-      legendPosition: LegendPositionOptions.bottomLeft,
-      keycapColour: "",
-      legendFontSize: 10,
-    } as Relegendable);
-
-    this.relegendables.push({
-      legend: "aaa\naaaaa",
-      legendColour: "",
-      legendPosition: LegendPositionOptions.bottomRight,
-      keycapColour: "",
-      legendFontSize: 10,
-    } as Relegendable);
-
-    this.relegendables.push({
-      legend: "aaa\naaaaa",
-      legendColour: "",
-      legendPosition: LegendPositionOptions.left,
-      keycapColour: "",
-      legendFontSize: 10,
-    } as Relegendable);
-
-    this.relegendables.push({
-      legend: "aaa\naaaaa",
-      legendColour: "",
-      legendPosition: LegendPositionOptions.right,
-      keycapColour: "",
-      legendFontSize: 10,
-    } as Relegendable);
+    this.relegendables.push(new Relegendable());
   }
 
   addNew() {
-    // var newRelegendable: Relegendable = {
-    //   legend: 'aaa\naaaaa',
-    //   legendColour: '',
-    //   legendPosition: LegendPositionOptions.centre,
-    //   keycapColour: '',
-    // };
-    // this.relegendables.push(newRelegendable);
+    this.relegendables.push({
+      legend: "Aa",
+      legendPosition: LegendPositionOptions.topLeft,
+      legendFontSize: 10,
+      legendAlign: LegendAlignOptions.alignCentre,
+      legendColour: "#123456",
+      keycapColour: "#abcdef",
+    } as Relegendable);
   }
 }
