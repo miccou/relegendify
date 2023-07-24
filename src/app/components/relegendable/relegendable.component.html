@@ -1,13 +1,13 @@
 <div
-  class="inline-block m-2 bg-slate-700 rounded-md p-2"
+  class="bg-slate-700 m-2 inline-block rounded-md p-2"
   *ngIf="relegendable !== undefined"
 >
   <!-- preview -->
   <div
-    class="w-full h-32 flex flex-col items-center justify-center print:items-end print:justify-end"
+    class="flex h-32 w-full flex-col items-center justify-center print:items-end print:justify-end"
   >
     <div
-      class="inline-block bg-white select-none m-2 align-top p-1 outline outline-black outline-1 print:w-cherry w-cherry h-cherry scale-[2] print:scale-100"
+      class="bg-white outline-black m-2 inline-block h-cherry w-cherry scale-[2] select-none p-1 align-top outline outline-1 print:w-cherry print:scale-100"
       [ngClass]="fontSizeName()"
     >
       <div class="h-full w-full" [ngClass]="relegendableClass().parent">
@@ -23,11 +23,11 @@
 
   <!-- controls -->
   <div
-    class="inline-block flex-col w-48 h-32 bg-green-200 select-none rounded-md align-top p-1 text-sm print:hidden"
+    class="bg-green-200 inline-block h-32 w-48 select-none flex-col rounded-md p-1 align-top text-sm print:hidden"
   >
     <div>
       <textarea
-        class="flex-initial w-full resize-none p-0.5"
+        class="w-full flex-initial resize-none p-0.5"
         type="text"
         cols="10"
         rows="2"
@@ -36,7 +36,7 @@
       ></textarea>
     </div>
 
-    <div class="flex flex-row justify-between items-center px-3">
+    <div class="flex flex-row items-center justify-between px-3">
       <div class="w-fit">
         <app-position-picker
           [position]="relegendable.legendPosition"
@@ -50,17 +50,17 @@
       </div>
     </div>
 
-    <div class="flex flex-row items-center mt-2">
+    <div class="mt-2 flex flex-row items-center">
       <input
         type="range"
-        class="w-full h-3 appearance-none rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="bg-gray-100 focus:ring-blue-500 h-3 w-full appearance-none rounded-full focus:outline-none focus:ring-2"
         [(ngModel)]="relegendable.legendFontSize"
         id="legendFontSize"
         min="4"
         max="24"
         step="0.5"
       />
-      <div class="w-10 ml-1">{{ relegendable.legendFontSize }}</div>
+      <div class="ml-1 w-10">{{ relegendable.legendFontSize }}</div>
     </div>
   </div>
 </div>
