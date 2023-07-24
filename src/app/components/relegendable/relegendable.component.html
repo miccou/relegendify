@@ -1,11 +1,11 @@
 <div
-  class="bg-slate-700 m-2 inline-block rounded-md p-2"
+  class="m-2 inline-block rounded-md border border-cutty-sark-300 bg-cutty-sark-200 shadow"
   *ngIf="relegendable !== undefined">
   <!-- preview -->
   <div
     class="flex h-32 w-full flex-col items-center justify-center print:items-end print:justify-end">
     <div
-      class="bg-white outline-black m-2 inline-block h-cherry w-cherry scale-[2] select-none p-1 align-top outline outline-1 print:w-cherry print:scale-100"
+      class="outline-black m-2 inline-block h-cherry w-cherry scale-[2] select-none bg-white p-1 align-top shadow-none outline outline-1 print:w-cherry print:scale-100"
       [ngClass]="fontSizeName()">
       <div class="h-full w-full" [ngClass]="relegendableClass().parent">
         <div
@@ -19,7 +19,7 @@
 
   <!-- controls -->
   <div
-    class="bg-green-200 inline-block h-32 w-48 select-none flex-col rounded-md p-1 align-top text-sm print:hidden">
+    class="m-1 inline-block h-32 w-48 select-none flex-col rounded-md border border-cutty-sark-400 p-1 align-top text-sm print:hidden">
     <div>
       <textarea
         class="w-full flex-initial resize-none p-0.5"
@@ -42,10 +42,10 @@
       </div>
     </div>
 
-    <div class="mt-2 flex flex-row items-center">
+    <div class="mt-1 flex flex-row items-center">
       <input
         type="range"
-        class="bg-gray-100 focus:ring-blue-500 h-3 w-full appearance-none rounded-full focus:outline-none focus:ring-2"
+        class="bg-gray-100 [&::-webkit-slider-thumb]:bg-purple-500 h-3 w-full appearance-none rounded-full focus:outline-none focus:ring-2 focus:ring-aquamarine-500 [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-aquamarine-500"
         [(ngModel)]="relegendable.legendFontSize"
         id="legendFontSize"
         min="4"
