@@ -7,6 +7,7 @@ import {
 import {
   LegendPositionOptions,
   Relegendable,
+  LegendAlignOptions,
 } from 'src/app/types/relegendable';
 
 @Component({
@@ -20,27 +21,54 @@ export class RelegendableComponent {
   ngOnInit() {}
 
   relegendableClass(): { parent: string; child: string } {
+    let parent;
+    let child;
+
     switch (this.relegendable.legendPosition) {
       case LegendPositionOptions.centre:
       default:
-        return { parent: 'flex items-center justify-center', child: '' };
+        parent = 'flex items-center justify-center';
+        break;
       case LegendPositionOptions.top:
-        return { parent: 'flex items-start justify-center', child: '' };
+        parent = 'flex items-start justify-center';
+        break;
       case LegendPositionOptions.topLeft:
-        return { parent: 'flex items-start justify-start', child: '' };
+        parent = 'flex items-start justify-start';
+        break;
       case LegendPositionOptions.topRight:
-        return { parent: 'flex items-start justify-end', child: '' };
+        parent = 'flex items-start justify-end';
+        break;
       case LegendPositionOptions.bottom:
-        return { parent: 'flex items-end justify-center', child: '' };
+        parent = 'flex items-end justify-center';
+        break;
       case LegendPositionOptions.bottomLeft:
-        return { parent: 'flex items-end justify-start', child: '' };
+        parent = 'flex items-end justify-start';
+        break;
       case LegendPositionOptions.bottomRight:
-        return { parent: 'flex items-end justify-end', child: '' };
+        parent = 'flex items-end justify-end';
+        break;
       case LegendPositionOptions.left:
-        return { parent: 'flex items-center justify-start', child: '' };
+        parent = 'flex items-center justify-start';
+        break;
       case LegendPositionOptions.right:
-        return { parent: 'flex items-center justify-end', child: '' };
+        parent = 'flex items-center justify-end';
+        break;
     }
+
+    switch (this.relegendable.legendAlign) {
+      case LegendAlignOptions.alignCentre:
+      default:
+        child = 'text-center';
+        break;
+      case LegendAlignOptions.alignLeft:
+        child = 'text-left';
+        break;
+      case LegendAlignOptions.alignRight:
+        child = 'text-right';
+        break;
+    }
+
+    return { parent, child };
   }
 
   fontSizeName(): string {
@@ -49,7 +77,7 @@ export class RelegendableComponent {
       .replace('.', '-')}px`;
   }
 
-  onPositionSelected(position: keyof typeof LegendPositionOptions) {
+  onPositionSelected(position: LegendPositionOptions) {
     console.log(position);
     this.relegendable.legendPosition = position;
   }

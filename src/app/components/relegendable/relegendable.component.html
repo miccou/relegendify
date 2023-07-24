@@ -24,9 +24,14 @@
         [(ngModel)]="relegendable.legend"></textarea>
     </div>
 
-    <div class="container mx-auto mt-0 w-fit">
-      <app-position-picker [position]="relegendable.legendPosition"
-        (positionSelected)="onPositionSelected($event)"></app-position-picker>
+    <div class="flex flex-row justify-between items-center px-3">
+      <div class=" w-fit">
+        <app-position-picker [position]="relegendable.legendPosition"
+          (positionSelected)="onPositionSelected($event)"></app-position-picker>
+      </div>
+      <div class="w-fit">
+        <app-align-picker [(align)]="relegendable.legendAlign"></app-align-picker>
+      </div>
     </div>
 
     <div class="flex flex-row items-center mt-2">

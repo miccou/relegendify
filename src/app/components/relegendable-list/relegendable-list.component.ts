@@ -20,7 +20,7 @@ export class RelegendableListComponent implements OnInit {
       legendPosition: LegendPositionOptions.centre,
       keycapColour: '',
       legendFontSize: 10,
-    });
+    } as Relegendable);
 
     this.relegendables.push({
       legend: 'aaa\naaaaa',
@@ -28,7 +28,7 @@ export class RelegendableListComponent implements OnInit {
       legendPosition: LegendPositionOptions.top,
       keycapColour: '',
       legendFontSize: 10,
-    });
+    } as Relegendable);
 
     this.relegendables.push({
       legend: 'aaa\naaaaa',
@@ -36,7 +36,7 @@ export class RelegendableListComponent implements OnInit {
       legendPosition: LegendPositionOptions.topLeft,
       keycapColour: '',
       legendFontSize: 10,
-    });
+    } as Relegendable);
 
     this.relegendables.push({
       legend: 'aaa\naaaaa',
@@ -44,7 +44,7 @@ export class RelegendableListComponent implements OnInit {
       legendPosition: LegendPositionOptions.topRight,
       keycapColour: '',
       legendFontSize: 10,
-    });
+    } as Relegendable);
 
     this.relegendables.push({
       legend: 'aaa\naaaaa',
@@ -52,7 +52,7 @@ export class RelegendableListComponent implements OnInit {
       legendPosition: LegendPositionOptions.bottom,
       keycapColour: '',
       legendFontSize: 10,
-    });
+    } as Relegendable);
 
     this.relegendables.push({
       legend: 'aaa\naaaaa',
@@ -60,7 +60,7 @@ export class RelegendableListComponent implements OnInit {
       legendPosition: LegendPositionOptions.bottomLeft,
       keycapColour: '',
       legendFontSize: 10,
-    });
+    } as Relegendable);
 
     this.relegendables.push({
       legend: 'aaa\naaaaa',
@@ -68,7 +68,7 @@ export class RelegendableListComponent implements OnInit {
       legendPosition: LegendPositionOptions.bottomRight,
       keycapColour: '',
       legendFontSize: 10,
-    });
+    } as Relegendable);
 
     this.relegendables.push({
       legend: 'aaa\naaaaa',
@@ -76,7 +76,7 @@ export class RelegendableListComponent implements OnInit {
       legendPosition: LegendPositionOptions.left,
       keycapColour: '',
       legendFontSize: 10,
-    });
+    } as Relegendable);
 
     this.relegendables.push({
       legend: 'aaa\naaaaa',
@@ -84,7 +84,7 @@ export class RelegendableListComponent implements OnInit {
       legendPosition: LegendPositionOptions.right,
       keycapColour: '',
       legendFontSize: 10,
-    });
+    } as Relegendable);
   }
 
   addNew() {
