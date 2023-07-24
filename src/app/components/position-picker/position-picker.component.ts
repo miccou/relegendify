@@ -7,19 +7,17 @@ import { LegendPositionOptions } from 'src/app/types/relegendable';
 })
 export class PositionPickerComponent implements OnInit {
   positions = Object.values(LegendPositionOptions);
-  selectedPosition!: keyof typeof LegendPositionOptions;
+  selectedPosition!: LegendPositionOptions;
 
   @Input() groupName: string = Math.floor(Math.random() * 10000000).toString();
   @Input() position!: string;
-  @Output() positionSelected = new EventEmitter<
-    keyof typeof LegendPositionOptions
-  >();
+  @Output() positionSelected = new EventEmitter<LegendPositionOptions>();
 
   ngOnInit() {
-    this.selectedPosition = this.position as keyof typeof LegendPositionOptions;
+    this.selectedPosition = this.position as LegendPositionOptions;
   }
 
-  onPositionChange(position: keyof typeof LegendPositionOptions) {
+  onPositionChange(position: LegendPositionOptions) {
     this.selectedPosition = position;
     this.positionSelected.emit(this.selectedPosition); // Emit the selected position
   }

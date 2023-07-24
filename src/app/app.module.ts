@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PositionPickerComponent } from './components/position-picker/position-picker.component';
 import { NgxColorsModule } from 'ngx-colors';
+import { AlignPickerComponent } from './components/align-picker/align-picker.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NgxColorsModule } from 'ngx-colors';
     RelegendableListComponent,
     RelegendableControlsComponent,
     PositionPickerComponent,
+    AlignPickerComponent,
   ],
   imports: [
     BrowserModule,
