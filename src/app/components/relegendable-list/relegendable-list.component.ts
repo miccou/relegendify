@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import {
   LegendPositionOptions,
   LegendPositionOptionsType,
   Relegendable,
-} from 'src/app/types/relegendable';
+} from "src/app/types/relegendable";
 
 @Component({
-  selector: 'app-relegendable-list',
-  templateUrl: './relegendable-list.component.html',
+  selector: "app-relegendable-list",
+  templateUrl: "./relegendable-list.component.html",
 })
 export class RelegendableListComponent implements OnInit {
   relegendables: Relegendable[] = [];
@@ -15,74 +15,74 @@ export class RelegendableListComponent implements OnInit {
   ngOnInit() {
     // Create and push new relegendable objects for each legend position
     this.relegendables.push({
-      legend: 'aaa\naaaaa',
-      legendColour: '',
+      legend: "aaa\naaaaa",
+      legendColour: "",
       legendPosition: LegendPositionOptions.centre,
-      keycapColour: '',
+      keycapColour: "",
       legendFontSize: 10,
     } as Relegendable);
 
     this.relegendables.push({
-      legend: 'aaa\naaaaa',
-      legendColour: '',
+      legend: "aaa\naaaaa",
+      legendColour: "",
       legendPosition: LegendPositionOptions.top,
-      keycapColour: '',
+      keycapColour: "",
       legendFontSize: 10,
     } as Relegendable);
 
     this.relegendables.push({
-      legend: 'aaa\naaaaa',
-      legendColour: '',
+      legend: "aaa\naaaaa",
+      legendColour: "",
       legendPosition: LegendPositionOptions.topLeft,
-      keycapColour: '',
+      keycapColour: "",
       legendFontSize: 10,
     } as Relegendable);
 
     this.relegendables.push({
-      legend: 'aaa\naaaaa',
-      legendColour: '',
+      legend: "aaa\naaaaa",
+      legendColour: "",
       legendPosition: LegendPositionOptions.topRight,
-      keycapColour: '',
+      keycapColour: "",
       legendFontSize: 10,
     } as Relegendable);
 
     this.relegendables.push({
-      legend: 'aaa\naaaaa',
-      legendColour: '',
+      legend: "aaa\naaaaa",
+      legendColour: "",
       legendPosition: LegendPositionOptions.bottom,
-      keycapColour: '',
+      keycapColour: "",
       legendFontSize: 10,
     } as Relegendable);
 
     this.relegendables.push({
-      legend: 'aaa\naaaaa',
-      legendColour: '',
+      legend: "aaa\naaaaa",
+      legendColour: "",
       legendPosition: LegendPositionOptions.bottomLeft,
-      keycapColour: '',
+      keycapColour: "",
       legendFontSize: 10,
     } as Relegendable);
 
     this.relegendables.push({
-      legend: 'aaa\naaaaa',
-      legendColour: '',
+      legend: "aaa\naaaaa",
+      legendColour: "",
       legendPosition: LegendPositionOptions.bottomRight,
-      keycapColour: '',
+      keycapColour: "",
       legendFontSize: 10,
     } as Relegendable);
 
     this.relegendables.push({
-      legend: 'aaa\naaaaa',
-      legendColour: '',
+      legend: "aaa\naaaaa",
+      legendColour: "",
       legendPosition: LegendPositionOptions.left,
-      keycapColour: '',
+      keycapColour: "",
       legendFontSize: 10,
     } as Relegendable);
 
     this.relegendables.push({
-      legend: 'aaa\naaaaa',
-      legendColour: '',
+      legend: "aaa\naaaaa",
+      legendColour: "",
       legendPosition: LegendPositionOptions.right,
-      keycapColour: '',
+      keycapColour: "",
       legendFontSize: 10,
     } as Relegendable);
   }
