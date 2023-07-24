@@ -1,16 +1,16 @@
-<div class="bg-slate-300 grow max-w-7xl mx-auto px-8 flex-col">
-  <div class="grow container flex-row flex-wrap">
+<div class="bg-slate-300 mx-auto max-w-7xl grow flex-col px-8">
+  <div class="container grow flex-row flex-wrap">
     <app-relegendable
-      class="print:flex print:float-left"
+      class="print:float-left print:flex"
       *ngFor="let rel of relegendables"
       [relegendable]="rel"
     ></app-relegendable>
 
     <span
-      class="w-32 h-32 m-2 bg-red-200 cursor-pointer align-top items-center inline-block select-none rounded-md print:hidden"
+      class="bg-red-200 m-2 inline-block h-32 w-32 cursor-pointer select-none items-center rounded-md align-top print:hidden"
       (click)="addNew()"
     >
-      <img src="./assets/img/plus.svg" class="w-8 h-8 m-12" />
+      <img src="./assets/img/plus.svg" class="m-12 h-8 w-8" />
     </span>
   </div>
 </div>
