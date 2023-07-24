@@ -1,9 +1,9 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { LegendAlignOptions } from 'src/app/types/relegendable';
+import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { LegendAlignOptions } from "src/app/types/relegendable";
 
 @Component({
-  selector: 'app-align-picker',
-  templateUrl: './align-picker.component.html',
+  selector: "app-align-picker",
+  templateUrl: "./align-picker.component.html",
 })
 export class AlignPickerComponent {
   @Input() align!: LegendAlignOptions;

@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { LegendPositionOptions } from 'src/app/types/relegendable';
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { LegendPositionOptions } from "src/app/types/relegendable";
 
 @Component({
-  selector: 'app-position-picker',
-  templateUrl: './position-picker.component.html',
+  selector: "app-position-picker",
+  templateUrl: "./position-picker.component.html",
 })
 export class PositionPickerComponent implements OnInit {
   positions = Object.values(LegendPositionOptions);

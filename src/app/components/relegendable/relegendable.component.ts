@@ -3,16 +3,16 @@ import {
   Component,
   Input,
   OnInit,
-} from '@angular/core';
+} from "@angular/core";
 import {
   LegendPositionOptions,
   Relegendable,
   LegendAlignOptions,
-} from 'src/app/types/relegendable';
+} from "src/app/types/relegendable";
 
 @Component({
-  selector: 'app-relegendable',
-  templateUrl: './relegendable.component.html',
+  selector: "app-relegendable",
+  templateUrl: "./relegendable.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RelegendableComponent {
@@ -27,44 +27,44 @@ export class RelegendableComponent {
     switch (this.relegendable.legendPosition) {
       case LegendPositionOptions.centre:
       default:
-        parent = 'flex items-center justify-center';
+        parent = "flex items-center justify-center";
         break;
       case LegendPositionOptions.top:
-        parent = 'flex items-start justify-center';
+        parent = "flex items-start justify-center";
         break;
       case LegendPositionOptions.topLeft:
-        parent = 'flex items-start justify-start';
+        parent = "flex items-start justify-start";
         break;
       case LegendPositionOptions.topRight:
-        parent = 'flex items-start justify-end';
+        parent = "flex items-start justify-end";
         break;
       case LegendPositionOptions.bottom:
-        parent = 'flex items-end justify-center';
+        parent = "flex items-end justify-center";
         break;
       case LegendPositionOptions.bottomLeft:
-        parent = 'flex items-end justify-start';
+        parent = "flex items-end justify-start";
         break;
       case LegendPositionOptions.bottomRight:
-        parent = 'flex items-end justify-end';
+        parent = "flex items-end justify-end";
         break;
       case LegendPositionOptions.left:
-        parent = 'flex items-center justify-start';
+        parent = "flex items-center justify-start";
         break;
       case LegendPositionOptions.right:
-        parent = 'flex items-center justify-end';
+        parent = "flex items-center justify-end";
         break;
     }
 
     switch (this.relegendable.legendAlign) {
       case LegendAlignOptions.alignCentre:
       default:
-        child = 'text-center';
+        child = "text-center";
         break;
       case LegendAlignOptions.alignLeft:
-        child = 'text-left';
+        child = "text-left";
         break;
       case LegendAlignOptions.alignRight:
-        child = 'text-right';
+        child = "text-right";
         break;
     }
 
@@ -74,7 +74,7 @@ export class RelegendableComponent {
   fontSizeName(): string {
     return `legend-${this.relegendable.legendFontSize
       .toString()
-      .replace('.', '-')}px`;
+      .replace(".", "-")}px`;
   }
 
   onPositionSelected(position: LegendPositionOptions) {

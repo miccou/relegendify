@@ -1,8 +1,14 @@
 <div class="grid grid-cols-3 gap-1">
-    <ng-container *ngFor="let position of positions">
-        <label class="flex items-center">
-            <input type="radio" [name]="groupName" [value]="position" [(ngModel)]="selectedPosition"
-                (change)="onPositionChange(selectedPosition)" class="mr-2" />
-        </label>
-    </ng-container>
+  <ng-container *ngFor="let position of positions">
+    <label class="flex items-center">
+      <input
+        type="radio"
+        [name]="groupName"
+        [value]="position"
+        [(ngModel)]="selectedPosition"
+        (change)="onPositionChange(selectedPosition)"
+        class="mr-2"
+      />
+    </label>
+  </ng-container>
 </div>
