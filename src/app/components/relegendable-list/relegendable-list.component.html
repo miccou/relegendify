@@ -3,13 +3,11 @@
     <app-relegendable
       class="print:float-left print:flex"
       *ngFor="let rel of relegendables"
-      [relegendable]="rel"
-    ></app-relegendable>
+      [relegendable]="rel"></app-relegendable>
 
     <span
       class="bg-red-200 m-2 inline-block h-32 w-32 cursor-pointer select-none items-center rounded-md align-top print:hidden"
-      (click)="addNew()"
-    >
+      (click)="addNew()">
       <img src="./assets/img/plus.svg" class="m-12 h-8 w-8" />
     </span>
   </div>
