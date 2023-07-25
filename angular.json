@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "relegendables-maker": {
+    "relegendify": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/relegendables-maker",
+            "outputPath": "dist/relegendify",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -58,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "relegendables-maker:build:production"
+              "browserTarget": "relegendify:build:production"
             },
             "development": {
-              "browserTarget": "relegendables-maker:build:development"
+              "browserTarget": "relegendify:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +69,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "relegendables-maker:build"
+            "browserTarget": "relegendify:build"
           }
         },
         "test": {
