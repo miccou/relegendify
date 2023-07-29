@@ -12,6 +12,7 @@ import { CommonModule } from "@angular/common";
 import { PositionPickerComponent } from "./components/position-picker/position-picker.component";
 import { NgxColorsModule } from "ngx-colors";
 import { AlignPickerComponent } from "./components/align-picker/align-picker.component";
+import { FontSizePickerComponent } from './components/font-size-picker/font-size-picker.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AlignPickerComponent } from "./components/align-picker/align-picker.com
     RelegendableControlsComponent,
     PositionPickerComponent,
     AlignPickerComponent,
+    FontSizePickerComponent,
   ],
   imports: [
     BrowserModule,
