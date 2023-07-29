@@ -81,4 +81,8 @@ export class RelegendableComponent {
     console.log(position);
     this.relegendable.legendPosition = position;
   }
+
+  delete() {}
+
+  clone() {}
 }
