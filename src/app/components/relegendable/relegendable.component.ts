@@ -3,6 +3,7 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnInit,
   Output,
 } from "@angular/core";
 import {
@@ -81,7 +82,6 @@ export class RelegendableComponent {
   }
 
   onPositionSelected(position: LegendPositionOptions) {
-    console.log(position);
     this.relegendable.legendPosition = position;
   }
 }
