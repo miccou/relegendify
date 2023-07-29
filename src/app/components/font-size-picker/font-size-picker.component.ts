@@ -5,6 +5,18 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   templateUrl: "./font-size-picker.component.html",
 })
 export class FontSizePickerComponent {
+  selectedFontSize!: number;
+
   @Input() fontSize!: number;
   @Output() fontSizeChange = new EventEmitter<number>();
+
+  ngOnInit() {
+    this.selectedFontSize = this.fontSize;
+    console.log(this.selectedFontSize);
+  }
+
+  onFontSizeChange(fontSize: number) {
+    this.fontSize = fontSize;
+    this.fontSizeChange.emit(this.fontSize);
+  }
 }
