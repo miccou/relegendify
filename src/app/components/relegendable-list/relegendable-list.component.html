@@ -3,7 +3,10 @@
     <app-relegendable
       class="print:float-left print:flex"
       *ngFor="let rel of relegendables"
-      [relegendable]="rel"></app-relegendable>
+      [relegendable]="rel"
+      (delete)="delete(rel)"
+      (clone)="clone(rel)">
+    </app-relegendable>
 
     <span
       class="m-12 inline-block h-32 w-32 cursor-pointer select-none items-center border border-cutty-sark-300 bg-cutty-sark-200 align-top shadow print:hidden"

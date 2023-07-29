@@ -2,12 +2,15 @@
   class="m-2 inline-block rounded-md border border-cutty-sark-300 bg-cutty-sark-200 shadow print:border-none print:bg-white print:shadow-none"
   *ngIf="relegendable !== undefined">
   <!-- preview -->
+
   <div
     class="flex h-32 w-full flex-col items-center justify-center print:items-end print:justify-end">
     <div
       class="outline-black m-2 inline-block h-cherry w-cherry scale-[2] select-none bg-white p-1 align-top shadow-none outline outline-1 print:w-cherry print:scale-100"
       [ngClass]="fontSizeName()">
-      <div class="h-full w-full" [ngClass]="relegendableClass().parent">
+      <div
+        class="h-full w-full overflow-clip"
+        [ngClass]="relegendableClass().parent">
         <div
           class="inline-block whitespace-pre-line"
           [ngClass]="relegendableClass().child">
@@ -42,5 +45,14 @@
 
     <app-font-size-picker
       [(fontSize)]="relegendable.legendFontSize"></app-font-size-picker>
+  </div>
+
+  <div class="mx-auto flex h-10 w-fit select-none flex-row gap-1">
+    <app-button-small (click)="delete.emit()">
+      <img src="./assets/img/trash.svg" /> Delete
+    </app-button-small>
+    <app-button-small (click)="clone.emit()">
+      <img src="./assets/img/clone.svg" /> Clone
+    </app-button-small>
   </div>
 </div>

@@ -21,10 +21,17 @@ export enum LegendAlignOptions {
 export type LegendAlignOptionsType = keyof typeof LegendAlignOptions;
 
 export class Relegendable {
+  uuid: string = crypto.randomUUID();
   legend: string = "Aa";
   legendPosition: LegendPositionOptions = LegendPositionOptions.topLeft;
   legendFontSize: number = 10;
   legendAlign: LegendAlignOptions = LegendAlignOptions.alignCentre;
   legendColour: string = "#123456";
   keycapColour: string = "#abcdef";
+
+  clone(): Relegendable {
+    const cloned = new Relegendable();
+    Object.assign(cloned, { ...this, uuid: crypto.randomUUID() });
+    return cloned;
+  }
 }
