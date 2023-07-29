@@ -2,6 +2,7 @@
   class="m-2 inline-block rounded-md border border-cutty-sark-300 bg-cutty-sark-200 shadow print:border-none print:bg-white print:shadow-none"
   *ngIf="relegendable !== undefined">
   <!-- preview -->
+
   <div
     class="flex h-32 w-full flex-col items-center justify-center print:items-end print:justify-end">
     <div
@@ -47,10 +48,10 @@
   </div>
 
   <div class="mx-auto flex h-10 w-fit select-none flex-row gap-1">
-    <app-button-small (click)="delete()">
+    <app-button-small (click)="delete.emit()">
       <img src="./assets/img/trash.svg" /> Delete
     </app-button-small>
-    <app-button-small (click)="clone()">
+    <app-button-small (click)="clone.emit()">
       <img src="./assets/img/clone.svg" /> Clone
     </app-button-small>
   </div>

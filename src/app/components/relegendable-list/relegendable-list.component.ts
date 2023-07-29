@@ -18,13 +18,20 @@ export class RelegendableListComponent implements OnInit {
   }
 
   addNew() {
-    this.relegendables.push({
-      legend: "Aa",
-      legendPosition: LegendPositionOptions.topLeft,
-      legendFontSize: 10,
-      legendAlign: LegendAlignOptions.alignCentre,
-      legendColour: "#123456",
-      keycapColour: "#abcdef",
-    } as Relegendable);
+    this.relegendables.push(new Relegendable());
+  }
+
+  delete(rel: Relegendable) {
+    this.relegendables.splice(
+      this.relegendables.findIndex((r) => r.uuid == rel.uuid),
+      1,
+    );
+  }
+  clone(rel: Relegendable) {
+    this.relegendables.splice(
+      this.relegendables.findIndex((r) => r.uuid == rel.uuid) + 1,
+      0,
+      rel.clone(),
+    );
   }
 }

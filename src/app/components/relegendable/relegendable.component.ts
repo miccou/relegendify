@@ -1,8 +1,9 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   Input,
-  OnInit,
+  Output,
 } from "@angular/core";
 import {
   LegendPositionOptions,
@@ -17,6 +18,8 @@ import {
 })
 export class RelegendableComponent {
   @Input() relegendable!: Relegendable;
+  @Output() delete = new EventEmitter();
+  @Output() clone = new EventEmitter();
 
   ngOnInit() {}
 
@@ -81,8 +84,4 @@ export class RelegendableComponent {
     console.log(position);
     this.relegendable.legendPosition = position;
   }
-
-  delete() {}
-
-  clone() {}
 }
