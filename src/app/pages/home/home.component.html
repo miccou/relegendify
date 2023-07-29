@@ -2,7 +2,13 @@
   class="flex flex-grow-0 select-none items-center justify-between gap-8 bg-cutty-sark-800 p-4 text-3xl font-thin text-cutty-sark-50 shadow print:hidden">
   <div>Relegendify</div>
 
-  <nav class="flex items-end gap-4 text-sm">
+  <nav class="flex items-center gap-4 text-sm">
+    <app-button-medium (click)="print()">
+      Print <img src="./assets/img/print.svg" />
+    </app-button-medium>
+
+    <div class="mx-4 h-6 w-px bg-cutty-sark-200"></div>
+
     <a href="https://github.com/miccou/relegendify/issues" target="_blank">
       <app-button-medium>
         Open an issue <img src="./assets/img/github.svg" />
@@ -21,6 +27,6 @@
   class="flex flex-grow bg-cutty-sark-50"></app-relegendable-list>
 
 <footer
-  class="h-8 bg-cutty-sark-800 pt-2 text-center text-sm text-cutty-sark-50 print:hidden">
-  Made with 💖 by mike
+  class="flex h-8 select-none flex-row items-center justify-center gap-2 bg-cutty-sark-800 pt-2 text-center text-sm text-cutty-sark-50 print:hidden">
+  Made with <img src="./assets/img/heart.svg" /> by mike
 </footer>
