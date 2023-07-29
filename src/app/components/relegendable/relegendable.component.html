@@ -47,15 +47,11 @@
   </div>
 
   <div class="mx-auto flex h-10 w-fit select-none flex-row gap-1">
-    <div
-      (click)="delete()"
-      class="m-auto flex h-8 w-20 cursor-pointer items-center justify-center gap-1 rounded-md border border-aquamarine-950 bg-gradient-to-br from-aquamarine-400 to-aquamarine-500 p-2 text-cutty-sark-950 hover:from-aquamarine-300 hover:to-aquamarine-400">
+    <app-button-small (click)="delete()">
       <img src="./assets/img/trash.svg" /> Delete
-    </div>
-    <div
-      (click)="clone()"
-      class="m-auto flex h-8 w-20 cursor-pointer items-center justify-center gap-1 rounded-md border border-aquamarine-950 bg-gradient-to-br from-aquamarine-400 to-aquamarine-500 p-2 text-cutty-sark-950 hover:from-aquamarine-300 hover:to-aquamarine-400">
+    </app-button-small>
+    <app-button-small (click)="clone()">
       <img src="./assets/img/clone.svg" /> Clone
-    </div>
+    </app-button-small>
   </div>
 </div>
