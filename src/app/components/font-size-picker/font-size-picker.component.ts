@@ -12,7 +12,6 @@ export class FontSizePickerComponent {
 
   ngOnInit() {
     this.selectedFontSize = this.fontSize;
-    console.log(this.selectedFontSize);
   }
 
   onFontSizeChange(fontSize: number) {
