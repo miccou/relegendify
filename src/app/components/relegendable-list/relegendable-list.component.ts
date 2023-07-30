@@ -1,10 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import {
-  LegendAlignOptions,
-  LegendPositionOptions,
-  LegendPositionOptionsType,
-  Relegendable,
-} from "src/app/types/relegendable";
+  CustomEvents,
+  GoogleAnalyticsService,
+} from "src/app/services/google-analytics-service.service";
+import { Relegendable } from "src/app/types/relegendable";
 
 @Component({
   selector: "app-relegendable-list",
@@ -13,12 +12,15 @@ import {
 export class RelegendableListComponent implements OnInit {
   relegendables: Relegendable[] = [];
 
+  constructor(private googleAnalyticsService: GoogleAnalyticsService) {}
+
   ngOnInit() {
     this.relegendables.push(new Relegendable());
   }
 
   addNew() {
     this.relegendables.push(new Relegendable());
+    this.googleAnalyticsService.trackEvent(CustomEvents.addRelegendable);
   }
 
   delete(rel: Relegendable) {
@@ -26,6 +28,7 @@ export class RelegendableListComponent implements OnInit {
       this.relegendables.findIndex((r) => r.uuid == rel.uuid),
       1,
     );
+    this.googleAnalyticsService.trackEvent(CustomEvents.deleteRelegendable);
   }
   clone(rel: Relegendable) {
     this.relegendables.splice(
@@ -33,5 +36,6 @@ export class RelegendableListComponent implements OnInit {
       0,
       rel.clone(),
     );
+    this.googleAnalyticsService.trackEvent(CustomEvents.addRelegendable);
   }
 }
