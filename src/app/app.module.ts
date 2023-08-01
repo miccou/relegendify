@@ -12,9 +12,9 @@ import { CommonModule } from "@angular/common";
 import { PositionPickerComponent } from "./components/position-picker/position-picker.component";
 import { NgxColorsModule } from "ngx-colors";
 import { AlignPickerComponent } from "./components/align-picker/align-picker.component";
-import { FontSizePickerComponent } from './components/font-size-picker/font-size-picker.component';
-import { ButtonSmallComponent } from './components/button-small/button-small.component';
-import { ButtonMediumComponent } from './components/button-medium/button-medium.component';
+import { FontSizePickerComponent } from "./components/font-size-picker/font-size-picker.component";
+import { ButtonSmallComponent } from "./components/button-small/button-small.component";
+import { ButtonMediumComponent } from "./components/button-medium/button-medium.component";
 
 @NgModule({
   declarations: [

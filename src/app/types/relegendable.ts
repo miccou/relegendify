@@ -10,16 +10,11 @@ export enum LegendPositionOptions {
   bottomRight = "Bottom right",
 }
 
-export type LegendPositionOptionsType = keyof typeof LegendPositionOptions;
-
 export enum FrontLipLegendPositionOptions {
   left = "Left",
   centre = "Centre",
   right = "Right",
 }
-
-export type FrontLipLegendPositionOptionsType =
-  keyof typeof FrontLipLegendPositionOptions;
 
 export enum LegendAlignOptions {
   alignLeft = "Align left",
