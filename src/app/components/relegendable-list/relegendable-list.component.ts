@@ -12,6 +12,8 @@ import { Relegendable } from "src/app/types/relegendable";
 export class RelegendableListComponent implements OnInit {
   relegendables: Relegendable[] = [];
 
+  includeFrontLip = false;
+
   constructor(private googleAnalyticsService: GoogleAnalyticsService) {}
 
   ngOnInit() {
