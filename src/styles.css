@@ -3,7 +3,22 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
-/* CSS classes for sizes between 4px and 14px in 0.5 steps */
+.legend-2px {
+  font-size: 4px;
+  line-height: normal;
+}
+.legend-2-5px {
+  font-size: 4.5px;
+  line-height: normal;
+}
+.legend-3px {
+  font-size: 4px;
+  line-height: normal;
+}
+.legend-3-5px {
+  font-size: 4.5px;
+  line-height: normal;
+}
 .legend-4px {
   font-size: 4px;
   line-height: normal;

@@ -42,7 +42,7 @@ module.exports = {
       },
       height: {
         'cherry': "12.5mm",
-        'cherry-lip': "2mm,"
+        'cherry-lip': "2mm"
       },
 
     },

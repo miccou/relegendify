@@ -40,4 +40,10 @@ export class RelegendableListComponent implements OnInit {
     );
     this.googleAnalyticsService.trackEvent(CustomEvents.addRelegendable);
   }
+
+  changeIncludeFrontLip() {
+    this.relegendables.forEach(
+      (r) => (r.includeFrontLip = this.includeFrontLip),
+    );
+  }
 }

@@ -10,12 +10,12 @@ import {
   LegendPositionOptions,
   Relegendable,
   LegendAlignOptions,
+  FrontLipLegendPositionOptions,
 } from "src/app/types/relegendable";
 
 @Component({
   selector: "app-relegendable",
   templateUrl: "./relegendable.component.html",
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RelegendableComponent {
   @Input() relegendable!: Relegendable;
@@ -75,13 +75,28 @@ export class RelegendableComponent {
     return { parent, child };
   }
 
-  fontSizeName(): string {
-    return `legend-${this.relegendable.legendFontSize
-      .toString()
-      .replace(".", "-")}px`;
+  frontLipClass(): string {
+    switch (this.relegendable.frontLipLegendPosition) {
+      case FrontLipLegendPositionOptions.centre:
+      default:
+        return "flex items-center justify-center";
+      case FrontLipLegendPositionOptions.left:
+        return "flex items-center justify-start";
+      case FrontLipLegendPositionOptions.right:
+        return "flex items-center justify-end";
+    }
+  }
+
+  fontSizeName(legendFontSize: number): string {
+    return `legend-${legendFontSize.toString().replace(".", "-")}px`;
   }
 
   onPositionSelected(position: LegendPositionOptions) {
     this.relegendable.legendPosition = position;
+  }
+
+  onLipPositionSelected(position: LegendPositionOptions) {
+    this.relegendable.frontLipLegendPosition =
+      position as string as FrontLipLegendPositionOptions;
   }
 }
