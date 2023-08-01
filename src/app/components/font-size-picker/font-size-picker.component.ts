@@ -8,6 +8,8 @@ export class FontSizePickerComponent {
   selectedFontSize!: number;
 
   @Input() fontSize!: number;
+  @Input() min: number = 4;
+  @Input() max: number = 24;
   @Output() fontSizeChange = new EventEmitter<number>();
 
   ngOnInit() {

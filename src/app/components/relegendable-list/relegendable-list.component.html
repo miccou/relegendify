@@ -1,9 +1,26 @@
 <div class="mx-auto max-w-7xl grow flex-col px-8">
-  <div class="container grow flex-row flex-wrap">
-    <!-- print only: relegendable with sizing for measurement confirmation -->
-
+  <div
+    class="container max-w-6xl grow flex-row flex-wrap items-center justify-center">
+    <!-- controls for all relegendables -->
     <div
-      class="mt-16 -mb-12 hidden items-center justify-between px-24 print:flex">
+      class="mx-52 my-6 flex max-w-2xl flex-grow basis-full gap-2 rounded-md bg-aquamarine-100 p-4 py-6 shadow print:hidden">
+      <label class="relative inline-flex cursor-pointer items-center">
+        <input
+          type="checkbox"
+          [(ngModel)]="includeFrontLip"
+          (change)="changeIncludeFrontLip()"
+          class="peer sr-only" />
+        <div
+          class="peer h-6 w-11 rounded-full bg-cutty-sark-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-cutty-sark-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-aquamarine-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-0"></div>
+        <span
+          class="dark:text-gray-300 ml-3 text-sm font-medium text-cutty-sark-900"
+          >Include front lip</span
+        >
+      </label>
+    </div>
+
+    <!-- print only: relegendable with sizing for measurement confirmation -->
+    <div class="mt-16 hidden items-center justify-between px-24 print:flex">
       <div>
         <div class="prose">
           <p>For best results:</p>
