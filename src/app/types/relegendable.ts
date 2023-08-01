@@ -12,6 +12,15 @@ export enum LegendPositionOptions {
 
 export type LegendPositionOptionsType = keyof typeof LegendPositionOptions;
 
+export enum FrontLipLegendPositionOptions {
+  left = "Left",
+  centre = "Centre",
+  right = "Right",
+}
+
+export type FrontLipLegendPositionOptionsType =
+  keyof typeof FrontLipLegendPositionOptions;
+
 export enum LegendAlignOptions {
   alignLeft = "Align left",
   alignCentre = "Align centre",
@@ -28,6 +37,11 @@ export class Relegendable {
   legendAlign: LegendAlignOptions = LegendAlignOptions.alignCentre;
   legendColour: string = "#123456";
   keycapColour: string = "#abcdef";
+  includeFrontLip: boolean = false; //done
+  frontLipLegend: string = "Text"; //done
+  frontLipLegendPosition: FrontLipLegendPositionOptions =
+    FrontLipLegendPositionOptions.centre;
+  frontLipLegendFontSize: number = 6;
 
   clone(): Relegendable {
     const cloned = new Relegendable();
