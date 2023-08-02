@@ -3,7 +3,7 @@
     class="container max-w-6xl grow flex-row flex-wrap items-center justify-center">
     <!-- controls for all relegendables -->
     <div
-      class="mx-52 my-6 flex max-w-2xl flex-grow basis-full gap-2 rounded-md bg-aquamarine-100 p-4 py-6 shadow print:hidden">
+      class="mx-52 my-6 flex max-w-2xl flex-grow basis-full flex-col gap-2 rounded-md bg-aquamarine-100 p-4 py-6 shadow print:hidden">
       <label class="relative inline-flex cursor-pointer items-center">
         <input
           type="checkbox"
@@ -13,9 +13,21 @@
         <div
           class="peer h-6 w-11 rounded-full bg-cutty-sark-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-cutty-sark-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-aquamarine-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-0"></div>
         <span
-          class="dark:text-gray-300 ml-3 text-sm font-medium text-cutty-sark-900"
-          >Include front lip</span
-        >
+          class="dark:text-gray-300 ml-3 text-sm font-medium text-cutty-sark-900">
+          Include front lip
+        </span>
+      </label>
+      <label class="relative inline-flex cursor-pointer items-center">
+        <input
+          type="checkbox"
+          [(ngModel)]="lessNoticeableBorder"
+          class="peer sr-only" />
+        <div
+          class="peer h-6 w-11 rounded-full bg-cutty-sark-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-cutty-sark-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-aquamarine-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-0"></div>
+        <span
+          class="dark:text-gray-300 ml-3 text-sm font-medium text-cutty-sark-900">
+          Less noticeable border
+        </span>
       </label>
     </div>
 
@@ -53,12 +65,13 @@
       class="print:float-left print:flex"
       *ngFor="let rel of relegendables"
       [relegendable]="rel"
+      [lessNoticeableBorder]="lessNoticeableBorder"
       (delete)="delete(rel)"
       (clone)="clone(rel)">
     </app-relegendable>
 
     <span
-      class="m-12 inline-block h-32 w-32 cursor-pointer select-none items-center border border-cutty-sark-300 bg-cutty-sark-200 align-top shadow print:hidden"
+      class="m-12 inline-block h-32 w-32 cursor-pointer select-none items-center rounded-md border border-cutty-sark-200 bg-cutty-sark-100 align-top shadow print:hidden"
       (click)="addNew()">
       <img src="./assets/img/plus.svg" class="m-12 h-8 w-8" />
     </span>
