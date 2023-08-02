@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "deploy": "ng deploy --cname=relegendify.com"
+    "deploy": "ng deploy --cname=relegendify.com",
+    "gh-pages-refresh": "git checkout gh-pages && git pull && git push origin --delete gh-pages && git push origin"
   },
   "private": true,
   "dependencies": {
