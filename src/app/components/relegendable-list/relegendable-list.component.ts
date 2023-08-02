@@ -13,6 +13,7 @@ export class RelegendableListComponent implements OnInit {
   relegendables: Relegendable[] = [];
 
   includeFrontLip = false;
+  lessNoticeableBorder = false;
 
   constructor(private googleAnalyticsService: GoogleAnalyticsService) {}
 

@@ -19,10 +19,17 @@ import {
 })
 export class RelegendableComponent {
   @Input() relegendable!: Relegendable;
+  @Input() lessNoticeableBorder!: boolean;
   @Output() delete = new EventEmitter();
   @Output() clone = new EventEmitter();
 
   ngOnInit() {}
+
+  get borderClass() {
+    return this.lessNoticeableBorder
+      ? "outline-dashed outline-1 outline-cutty-sark-50"
+      : "outline outline-1";
+  }
 
   relegendableClass(): { parent: string; child: string } {
     let parent;
