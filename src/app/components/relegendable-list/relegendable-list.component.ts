@@ -14,6 +14,7 @@ export class RelegendableListComponent implements OnInit {
 
   includeFrontLip = false;
   lessNoticeableBorder = false;
+  boldLegends = false;
 
   constructor(private googleAnalyticsService: GoogleAnalyticsService) {}
 

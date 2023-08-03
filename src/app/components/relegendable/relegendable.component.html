@@ -13,7 +13,7 @@
         [ngClass]="relegendableClass().parent">
         <div
           class="inline-block whitespace-pre-line"
-          [ngClass]="relegendableClass().child">
+          [ngClass]="relegendableClass().child + ' ' + boldClass">
           {{ relegendable.legend }}
         </div>
       </div>
@@ -24,7 +24,9 @@
       [ngClass]="
         fontSizeName(relegendable.frontLipLegendFontSize) + ' ' + borderClass
       ">
-      <div class="h-full w-full overflow-clip" [ngClass]="frontLipClass()">
+      <div
+        class="h-full w-full overflow-clip"
+        [ngClass]="frontLipClass() + ' ' + boldClass">
         {{ relegendable.frontLipLegend }}
       </div>
     </div>

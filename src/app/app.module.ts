@@ -15,6 +15,7 @@ import { AlignPickerComponent } from "./components/align-picker/align-picker.com
 import { FontSizePickerComponent } from "./components/font-size-picker/font-size-picker.component";
 import { ButtonSmallComponent } from "./components/button-small/button-small.component";
 import { ButtonMediumComponent } from "./components/button-medium/button-medium.component";
+import { CheckboxWithLabelComponent } from './components/checkbox-with-label/checkbox-with-label.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ButtonMediumComponent } from "./components/button-medium/button-medium.
     FontSizePickerComponent,
     ButtonSmallComponent,
     ButtonMediumComponent,
+    CheckboxWithLabelComponent,
   ],
   imports: [
     BrowserModule,
