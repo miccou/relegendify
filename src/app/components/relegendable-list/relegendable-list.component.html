@@ -53,6 +53,7 @@
       *ngFor="let rel of relegendables"
       [relegendable]="rel"
       [lessNoticeableBorder]="lessNoticeableBorder"
+      [boldLegends]="boldLegends"
       (delete)="delete(rel)"
       (clone)="clone(rel)">
     </app-relegendable>
