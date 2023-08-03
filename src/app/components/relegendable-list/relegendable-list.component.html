@@ -4,31 +4,18 @@
     <!-- controls for all relegendables -->
     <div
       class="mx-52 my-6 flex max-w-2xl flex-grow basis-full flex-col gap-2 rounded-md bg-aquamarine-100 p-4 py-6 shadow print:hidden">
-      <label class="relative inline-flex cursor-pointer items-center">
-        <input
-          type="checkbox"
-          [(ngModel)]="includeFrontLip"
-          (change)="changeIncludeFrontLip()"
-          class="peer sr-only" />
-        <div
-          class="peer h-6 w-11 rounded-full bg-cutty-sark-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-cutty-sark-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-aquamarine-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-0"></div>
-        <span
-          class="dark:text-gray-300 ml-3 text-sm font-medium text-cutty-sark-900">
-          Include front lip
-        </span>
-      </label>
-      <label class="relative inline-flex cursor-pointer items-center">
-        <input
-          type="checkbox"
-          [(ngModel)]="lessNoticeableBorder"
-          class="peer sr-only" />
-        <div
-          class="peer h-6 w-11 rounded-full bg-cutty-sark-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-cutty-sark-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-aquamarine-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-0"></div>
-        <span
-          class="dark:text-gray-300 ml-3 text-sm font-medium text-cutty-sark-900">
-          Less noticeable border
-        </span>
-      </label>
+      <app-checkbox-with-label
+        [(checked)]="includeFrontLip"
+        (checkedChange)="changeIncludeFrontLip()"
+        [label]="'Include front lip'"></app-checkbox-with-label>
+
+      <app-checkbox-with-label
+        [(checked)]="lessNoticeableBorder"
+        [label]="'Less noticeable border'"></app-checkbox-with-label>
+
+      <app-checkbox-with-label
+        [(checked)]="boldLegends"
+        [label]="'Bold legends'"></app-checkbox-with-label>
     </div>
 
     <!-- print only: relegendable with sizing for measurement confirmation -->
@@ -66,6 +53,7 @@
       *ngFor="let rel of relegendables"
       [relegendable]="rel"
       [lessNoticeableBorder]="lessNoticeableBorder"
+      [boldLegends]="boldLegends"
       (delete)="delete(rel)"
       (clone)="clone(rel)">
     </app-relegendable>

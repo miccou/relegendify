@@ -20,6 +20,7 @@ import {
 export class RelegendableComponent {
   @Input() relegendable!: Relegendable;
   @Input() lessNoticeableBorder!: boolean;
+  @Input() boldLegends!: boolean;
   @Output() delete = new EventEmitter();
   @Output() clone = new EventEmitter();
 
@@ -29,6 +30,10 @@ export class RelegendableComponent {
     return this.lessNoticeableBorder
       ? "outline-dashed outline-1 outline-cutty-sark-50"
       : "outline outline-1";
+  }
+
+  get boldClass() {
+    return this.boldLegends ? "font-semibold" : "font-normal";
   }
 
   relegendableClass(): { parent: string; child: string } {
