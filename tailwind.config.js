@@ -39,7 +39,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Varela Round", ...defaultTheme.fontFamily.sans],
+        sans: ["poppins", ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         'xs': ["0.6rem", "0.8rem"]

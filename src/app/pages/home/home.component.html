@@ -1,18 +1,18 @@
 <header
   class="flex flex-grow-0 select-none items-center justify-between gap-8 bg-cutty-sark-800 p-4 text-3xl font-thin text-cutty-sark-50 shadow print:hidden">
   <div class="flex h-10 flex-row items-center gap-3">
-    <img class="h-16 w-16" src="./assets/img/relegendify.png" />
-    Relegendify
+    <img class="h-16 w-16 popUpAnimation" src="./assets/img/relegendify.png" />
+    <span class="magic"><span class="magic-text">Relegendify</span></span>
   </div>
 
-  <nav class="mx-4 flex items-center gap-4 text-sm">
-    <app-button-medium (click)="print()">
+  <nav class="mx-4 flex items-center gap-4 text-sm ">
+    <app-button-medium (click)="print()" class="popUpAnimation">
       Print <img src="./assets/img/print.svg" />
     </app-button-medium>
 
     <div class="mx-4 h-6 w-px bg-cutty-sark-200"></div>
 
-    <a href="https://github.com/miccou/relegendify" target="_blank">
+    <a href="https://github.com/miccou/relegendify" target="_blank" class="popUpAnimation">
       <app-button-medium>
         GitHub <img src="./assets/img/github.svg" />
       </app-button-medium>
@@ -25,5 +25,5 @@
 
 <footer
   class="flex h-8 select-none flex-row items-center justify-center gap-2 bg-cutty-sark-800 pt-2 text-center text-sm text-cutty-sark-50 print:hidden">
-  Made with <img src="./assets/img/heart.svg" /> by mike
+  Made with <img src="./assets/img/heart.svg" class="popUpAnimation"/> by mike
 </footer>
