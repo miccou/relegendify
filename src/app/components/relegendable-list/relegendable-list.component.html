@@ -11,30 +11,38 @@
 
       <app-checkbox-with-label
         [(checked)]="lessNoticeableBorder"
-        [label]="'Less noticeable border'"></app-checkbox-with-label>
+        [label]="'Remove border'"></app-checkbox-with-label>
 
       <app-checkbox-with-label
         [(checked)]="boldLegends"
         [label]="'Bold legends'"></app-checkbox-with-label>
+
+      <app-checkbox-with-label
+        [(checked)]="invertColours"
+        [label]="'Invert colours (white on black)'"></app-checkbox-with-label>
     </div>
 
     <!-- print only: relegendable with sizing for measurement confirmation -->
-    <div class="mt-16 hidden items-center justify-between px-24 print:flex">
+    <div
+      class="mt-16 -mb-2 hidden items-center justify-between px-12 print:flex">
       <div>
         <div class="prose">
           <p>For best results:</p>
-          <ul class="ml-6 list-disc">
-            <li>Use Google Chrome</li>
-            <li>Ensure print settings are for A4 paper size</li>
-            <li>Set print scaling to "Actual Size" or "100%"</li>
-            <li>Measure the template to the right to ensure accuracy</li>
-            <li>Print in high resolution mode, not "draft"</li>
-            <li>Disable headers and footers when printing</li>
+          <ul class="ml-8 list-disc">
+            <li>Use Google Chrome.</li>
+            <li>Ensure print settings are for A4 paper size.</li>
+            <li>Set print scaling to "Actual Size" or "100%".</li>
+            <li>Measure the template to the right to ensure accuracy.</li>
+            <li>Print in high resolution mode, not "draft".</li>
+            <li>Disable headers and footers when printing.</li>
+            <li>
+              If you're printing white on black, enable "Background graphics".
+            </li>
           </ul>
         </div>
       </div>
       <div
-        class="outline-black m-2 inline-block h-cherry w-cherry scale-[2] select-none bg-white p-0 align-top shadow-none outline outline-1 print:w-cherry print:scale-100">
+        class="m-2 inline-block h-cherry w-cherry scale-[2] select-none bg-white p-0 align-top shadow-none outline outline-1 outline-black print:w-cherry print:scale-100">
         <div class="h-full w-full overflow-clip">
           <div
             class="legend-10-5px absolute -bottom-0.5 ml-2 inline-block whitespace-pre-line">
@@ -54,6 +62,7 @@
       [relegendable]="rel"
       [lessNoticeableBorder]="lessNoticeableBorder"
       [boldLegends]="boldLegends"
+      [invertColours]="invertColours"
       (delete)="delete(rel)"
       (clone)="clone(rel)">
     </app-relegendable>
