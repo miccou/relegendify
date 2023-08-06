@@ -46,6 +46,7 @@
   <div
     class="m-1 mb-2 inline-block h-fit w-48 select-none flex-col rounded-md border border-cutty-sark-200 p-1 align-top text-sm print:hidden">
     <div>
+      <div class="mb-0.5 text-xs italic text-cutty-sark-800">Legend:</div>
       <textarea
         class="w-full flex-initial resize-none p-0.5"
         type="text"
@@ -55,23 +56,35 @@
         [(ngModel)]="relegendable.legend"></textarea>
     </div>
 
-    <div class="flex flex-row items-center justify-between px-3">
-      <app-position-picker
-        [position]="relegendable.legendPosition"
-        (positionSelected)="onPositionSelected($event)">
-      </app-position-picker>
+    <div class="flex flex-row items-start justify-start gap-4">
+      <div class="flex flex-col">
+        <div class="mb-0.5 text-xs italic text-cutty-sark-800">Position:</div>
+        <app-position-picker
+          [position]="relegendable.legendPosition"
+          (positionSelected)="onPositionSelected($event)">
+        </app-position-picker>
+      </div>
 
-      <app-align-picker [(align)]="relegendable.legendAlign">
-      </app-align-picker>
+      <div class="flex h-full flex-col space-y-2">
+        <div class="mb-0.5 -translate-x-1 text-xs italic text-cutty-sark-800">
+          Text align:
+        </div>
+        <app-align-picker [(align)]="relegendable.legendAlign">
+        </app-align-picker>
+      </div>
     </div>
 
+    <div class="-mb-2 mt-1.5 text-xs italic text-cutty-sark-800">
+      Font size:
+    </div>
     <app-font-size-picker
       [(fontSize)]="relegendable.legendFontSize"></app-font-size-picker>
 
     <!-- controls for the front lip -->
     <ng-container *ngIf="relegendable.includeFrontLip">
-      <div class="h-px w-full bg-cutty-sark-400"></div>
+      <div class="mt-1 mb-2 h-px w-full bg-cutty-sark-200"></div>
       <div>
+        <div class="-mb-0.5 text-xs italic text-cutty-sark-800">Legend:</div>
         <textarea
           class="mt-1 w-full flex-initial resize-none p-0.5"
           type="text"
@@ -80,16 +93,25 @@
           wrap="hard"
           [(ngModel)]="relegendable.frontLipLegend"></textarea>
       </div>
-      <div class="flex flex-row items-center gap-1">
-        <app-font-size-picker
-          [(fontSize)]="relegendable.frontLipLegendFontSize"
-          [min]="3"
-          [max]="10"></app-font-size-picker>
-        <app-position-picker
-          [position]="relegendable.frontLipLegendPosition"
-          [lip]="true"
-          (positionSelected)="onLipPositionSelected($event)">
-        </app-position-picker>
+      <div class="-mt-2 flex flex-row items-center justify-center gap-0.5">
+        <div class="flex flex-col">
+          <div class="-mb-2 mt-2 text-xs italic text-cutty-sark-800">
+            Font size:
+          </div>
+          <app-font-size-picker
+            [(fontSize)]="relegendable.frontLipLegendFontSize"
+            [min]="3"
+            [max]="10"></app-font-size-picker>
+        </div>
+
+        <div class="flex flex-col">
+          <div class="mt-1 text-xs italic text-cutty-sark-800">Position:</div>
+          <app-position-picker
+            [position]="relegendable.frontLipLegendPosition"
+            [lip]="true"
+            (positionSelected)="onLipPositionSelected($event)">
+          </app-position-picker>
+        </div>
       </div>
     </ng-container>
   </div>

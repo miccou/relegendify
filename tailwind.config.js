@@ -41,6 +41,9 @@ module.exports = {
       fontFamily: {
         sans: ["Varela Round", ...defaultTheme.fontFamily.sans],
       },
+      fontSize: {
+        'xs': ["0.6rem", "0.8rem"]
+      },
       width: {
         'cherry': "10mm",
       },
