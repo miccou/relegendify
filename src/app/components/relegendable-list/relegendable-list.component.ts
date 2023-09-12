@@ -3,7 +3,7 @@ import {
   CustomEvents,
   GoogleAnalyticsService,
 } from "src/app/services/google-analytics-service.service";
-import { Relegendable } from "src/app/types/relegendable";
+import { FrontLipLegendPositionOptions, LegendAlignOptions, LegendPositionOptions, Relegendable } from "src/app/types/relegendable";
 
 @Component({
   selector: "app-relegendable-list",
@@ -16,6 +16,14 @@ export class RelegendableListComponent implements OnInit {
   lessNoticeableBorder = false;
   boldLegends = false;
   invertColours = false;
+
+
+  legendPosition = LegendPositionOptions.topLeft;
+  legendAlign = LegendAlignOptions.alignCentre;
+  legendFontSize = 10;
+  frontLipLegendFontSize = 6;
+
+  frontLipLegendPosition = FrontLipLegendPositionOptions.centre;
 
   constructor(private googleAnalyticsService: GoogleAnalyticsService) {}
 
@@ -48,5 +56,13 @@ export class RelegendableListComponent implements OnInit {
     this.relegendables.forEach(
       (r) => (r.includeFrontLip = this.includeFrontLip),
     );
+  }
+
+  onPositionSelected(e:any){
+    console.log(e)
+  }
+
+  onLipPositionSelected(e:any){
+    console.log(e)
   }
 }
