@@ -1,6 +1,9 @@
 <div class="flex gap-2">
   <div
-    class="cursor-pointer"
+    class="h-6 w-6 cursor-pointer rounded-md p-1"
+    [ngClass]="{
+      ' bg-aquamarine-400': this.align == LegendAlignOptions.alignLeft
+    }"
     (click)="selectAlign(LegendAlignOptions.alignLeft)">
     <img
       src="./assets/img/align-left.svg"
@@ -8,7 +11,10 @@
       type="image/svg+xml" />
   </div>
   <div
-    class="cursor-pointer"
+    class="h-6 w-6 cursor-pointer rounded-md p-1"
+    [ngClass]="{
+      ' bg-aquamarine-400': this.align == LegendAlignOptions.alignCentre
+    }"
     (click)="selectAlign(LegendAlignOptions.alignCentre)">
     <img
       src="./assets/img/align-center.svg"
@@ -16,7 +22,10 @@
       type="image/svg+xml" />
   </div>
   <div
-    class="h-4 w-4 cursor-pointer"
+    class="h-6 w-6 cursor-pointer rounded-md p-1"
+    [ngClass]="{
+      ' bg-aquamarine-400': this.align == LegendAlignOptions.alignRight
+    }"
     (click)="selectAlign(LegendAlignOptions.alignRight)">
     <img
       src="./assets/img/align-right.svg"

@@ -1,36 +1,33 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import {
-  FrontLipLegendPositionOptions,
-  LegendPositionOptions,
-} from "src/app/types/relegendable";
+import { LegendPositionOptions } from "src/app/types/relegendable";
 
 @Component({
   selector: "app-position-picker",
   templateUrl: "./position-picker.component.html",
 })
 export class PositionPickerComponent implements OnInit {
-  positions!: string[];
-
-  selectedPosition!: LegendPositionOptions;
-
+  positions!: LegendPositionOptions[];
   @Input() groupName: string = Math.floor(Math.random() * 10000000).toString();
-  @Input() position!: string;
+  @Input() position!: LegendPositionOptions;
   @Input() lip: boolean = false;
-  @Output() positionSelected = new EventEmitter<LegendPositionOptions>();
+  @Output() positionChange = new EventEmitter<LegendPositionOptions>();
 
   constructor() {}
 
   ngOnInit() {
-    this.selectedPosition = this.position as LegendPositionOptions;
     if (this.lip) {
-      this.positions = Object.values(FrontLipLegendPositionOptions);
+      this.positions = [
+        LegendPositionOptions.left,
+        LegendPositionOptions.centre,
+        LegendPositionOptions.right,
+      ];
     } else {
       this.positions = Object.values(LegendPositionOptions);
     }
   }
 
   onPositionChange(position: LegendPositionOptions) {
-    this.selectedPosition = position;
-    this.positionSelected.emit(this.selectedPosition); // Emit the selected position
+    this.position = position;
+    this.positionChange.emit(this.position);
   }
 }
