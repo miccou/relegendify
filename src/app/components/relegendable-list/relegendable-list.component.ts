@@ -4,7 +4,6 @@ import {
   GoogleAnalyticsService,
 } from "src/app/services/google-analytics-service.service";
 import {
-  FrontLipLegendPositionOptions,
   LegendAlignOptions,
   LegendPositionOptions,
   Relegendable,
@@ -27,7 +26,9 @@ export class RelegendableListComponent implements OnInit {
   legendFontSize = 10;
   frontLipLegendFontSize = 6;
 
-  frontLipLegendPosition = FrontLipLegendPositionOptions.centre;
+  frontLipLegendPosition = LegendPositionOptions.centre;
+
+  hideState: "Hide" | "Show" = "Hide";
 
   constructor(private googleAnalyticsService: GoogleAnalyticsService) {}
 
@@ -36,7 +37,12 @@ export class RelegendableListComponent implements OnInit {
   }
 
   addNew() {
-    this.relegendables.push(new Relegendable());
+    var newRl = new Relegendable();
+    if (this.includeFrontLip) {
+      newRl.addFrontLip();
+    }
+    this.relegendables.push(newRl);
+
     this.googleAnalyticsService.trackEvent(CustomEvents.addRelegendable);
   }
 
@@ -62,21 +68,21 @@ export class RelegendableListComponent implements OnInit {
     );
   }
 
-  onPositionSelected(e: any) {
-    console.log(e);
-    this.legendPosition = e;
-  }
-
-  onLipPositionSelected(e: any) {
-    console.log(e);
-    this.frontLipLegendPosition = e;
-  }
-
   applyToAll() {
     this.relegendables.forEach((rl) => {
       rl.legendAlign = this.legendAlign;
       rl.legendFontSize = this.legendFontSize;
       rl.legendPosition = this.legendPosition;
+      rl.frontLipLegendPosition = this.frontLipLegendPosition;
+      rl.frontLipLegendFontSize = this.frontLipLegendFontSize;
     });
+  }
+
+  hide() {
+    if (this.hideState == "Hide") {
+      this.hideState = "Show";
+    } else {
+      this.hideState = "Hide";
+    }
   }
 }

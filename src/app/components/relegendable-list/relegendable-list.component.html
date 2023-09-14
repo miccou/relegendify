@@ -1,86 +1,94 @@
-<div class="mx-auto max-w-7xl grow flex-col px-8">
+<div class="mx-auto w-fit max-w-7xl flex-col px-8">
   <div
-    class="container max-w-6xl grow flex-row flex-wrap items-center justify-center">
+    class="container max-w-6xl flex-row flex-wrap items-center justify-center">
     <!-- controls for all relegendables -->
     <div
-      class="max-w-lgflex-grow mx-auto my-6 flex basis-full flex-row gap-2 rounded-md bg-aquamarine-100 p-4 py-6 shadow print:hidden">
-      <div class="flex flex-col gap-2">
-        <app-checkbox-with-label
-          [(checked)]="includeFrontLip"
-          (checkedChange)="changeIncludeFrontLip()"
-          [label]="'Include front lip'"></app-checkbox-with-label>
+      class="mx-auto my-6 flex w-[420px] max-w-lg basis-full flex-col items-center gap-2 overflow-clip rounded-md bg-aquamarine-100 shadow print:hidden">
+      <div
+        class="flex w-full flex-row justify-between gap-2 bg-cutty-sark-700 p-2 text-white">
+        <div>Controls</div>
+        <div
+          (click)="hide()"
+          class="cursor-pointer select-none rounded bg-cutty-sark-600 px-2 hover:bg-cutty-sark-500">
+          {{ hideState }}
+        </div>
+      </div>
+      <div *ngIf="hideState == 'Hide'" class="flex flex-row gap-6 p-4 pt-2">
+        <div class="flex flex-col gap-2">
+          <app-checkbox-with-label
+            [(checked)]="includeFrontLip"
+            (checkedChange)="changeIncludeFrontLip()"
+            [label]="'Include front lip'"></app-checkbox-with-label>
 
-        <app-checkbox-with-label
-          [(checked)]="lessNoticeableBorder"
-          [label]="'Remove border'"></app-checkbox-with-label>
+          <app-checkbox-with-label
+            [(checked)]="lessNoticeableBorder"
+            [label]="'Remove border'"></app-checkbox-with-label>
 
-        <app-checkbox-with-label
-          [(checked)]="boldLegends"
-          [label]="'Bold legends'"></app-checkbox-with-label>
+          <app-checkbox-with-label
+            [(checked)]="boldLegends"
+            [label]="'Bold legends'"></app-checkbox-with-label>
 
-        <!-- <app-checkbox-with-label
+          <!-- <app-checkbox-with-label
         [(checked)]="invertColours"
         [label]="'Invert colours (white on black)'"></app-checkbox-with-label> -->
-      </div>
-      <div class="flex min-w-fit flex-col gap-2">
-        <div class="flex grow-0 flex-row items-start justify-start gap-4">
-          <div class="flex flex-col">
-            <div class="mb-0.5 text-xs italic text-cutty-sark-800">
-              Position:
-            </div>
-            <app-position-picker
-              [position]="legendPosition"
-              (positionSelected)="onPositionSelected($event)">
-            </app-position-picker>
-          </div>
-
-          <div class="flex h-full flex-col">
-            <div
-              class="mb-0.5 -translate-x-1 text-xs italic text-cutty-sark-800">
-              Text align:
-            </div>
-            <app-align-picker [(align)]="legendAlign"> </app-align-picker>
-          </div>
         </div>
-
-        <div class="-mb-2 mt-1.5 text-xs italic text-cutty-sark-800">
-          Font size:
-        </div>
-        <app-font-size-picker
-          [(fontSize)]="legendFontSize"></app-font-size-picker>
-
-        <!-- controls for the front lip -->
-        <ng-container *ngIf="includeFrontLip" class="max-w-fit grow-0">
-          <div class="mt-1 mb-2 h-px w-full bg-cutty-sark-200"></div>
-          <div
-            class="-mt-2 flex w-40 flex-row items-center justify-center gap-0.5">
-            <div class="flex w-36 flex-col">
-              <div class="-mb-2 mt-2 w-20 text-xs italic text-cutty-sark-800">
-                Font size:
-              </div>
-              <app-font-size-picker
-                [(fontSize)]="frontLipLegendFontSize"
-                [min]="3"
-                [max]="10"></app-font-size-picker>
-            </div>
-
-            <div class="flex w-16 grow-0 flex-col">
-              <div class="mt-1 text-xs italic text-cutty-sark-800">
+        <div class="flex min-w-fit flex-col gap-4">
+          <div class="flex grow-0 flex-row items-start justify-start gap-4">
+            <div class="flex flex-col">
+              <div class="mb-0.5 text-xs italic text-cutty-sark-800">
                 Position:
               </div>
-              <app-position-picker
-                [position]="frontLipLegendPosition"
-                [lip]="true"
-                (positionSelected)="onLipPositionSelected($event)">
+              <app-position-picker [(position)]="legendPosition">
               </app-position-picker>
             </div>
+
+            <div class="flex h-full flex-col">
+              <div
+                class="mb-0.5 -translate-x-1 text-xs italic text-cutty-sark-800">
+                Text align:
+              </div>
+              <app-align-picker [(align)]="legendAlign"> </app-align-picker>
+            </div>
           </div>
-        </ng-container>
-        <div class="mt-1 mb-2 h-px w-full bg-cutty-sark-200"></div>
-        <app-button-small (click)="applyToAll()">Apply</app-button-small>
-      </div>
-      <div class="flex flex-col gap-2">
+
+          <div class="-mb-2 mt-1.5 text-xs italic text-cutty-sark-800">
+            Font size:
+          </div>
+          <app-font-size-picker
+            [(fontSize)]="legendFontSize"></app-font-size-picker>
+
+          <!-- controls for the front lip -->
+          <ng-container *ngIf="includeFrontLip" class="max-w-fit grow-0">
+            <div class="mt-1 mb-2 h-px w-full bg-cutty-sark-200"></div>
+            <div
+              class="-mt-2 flex w-40 flex-row items-center justify-center gap-0.5">
+              <div class="flex w-36 flex-col">
+                <div class="-mb-2 mt-2 w-20 text-xs italic text-cutty-sark-800">
+                  Font size:
+                </div>
+                <app-font-size-picker
+                  [(fontSize)]="frontLipLegendFontSize"
+                  [min]="3"
+                  [max]="10"></app-font-size-picker>
+              </div>
+
+              <div class="flex w-16 grow-0 flex-col">
+                <div class="mt-1 text-xs italic text-cutty-sark-800">
+                  Position:
+                </div>
+                <app-position-picker
+                  [(position)]="frontLipLegendPosition"
+                  [lip]="true">
+                </app-position-picker>
+              </div>
+            </div>
+          </ng-container>
+          <div class="mt-1 mb-2 h-px w-full bg-cutty-sark-200"></div>
+          <app-button-small (click)="applyToAll()">Apply</app-button-small>
+        </div>
+        <!-- <div class="flex flex-col gap-2">
         Background colour: [colour picker] Legend colour: [colour picker]
+      </div> -->
       </div>
     </div>
 
