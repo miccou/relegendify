@@ -1,16 +1,17 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   EventEmitter,
   Input,
   OnInit,
   Output,
+  ViewChild,
 } from "@angular/core";
 import {
   LegendPositionOptions,
   Relegendable,
   LegendAlignOptions,
-  FrontLipLegendPositionOptions,
 } from "src/app/types/relegendable";
 
 @Component({
@@ -18,6 +19,7 @@ import {
   templateUrl: "./relegendable.component.html",
 })
 export class RelegendableComponent {
+  @ViewChild("container", { read: ElementRef }) container!: ElementRef;
   @Input() relegendable!: Relegendable;
   @Input() lessNoticeableBorder!: boolean;
   @Input() boldLegends!: boolean;
@@ -26,6 +28,12 @@ export class RelegendableComponent {
   @Output() clone = new EventEmitter();
 
   ngOnInit() {}
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.container.nativeElement.classList.remove("scale-50", "opacity-0");
+    }, 100);
+  }
 
   get borderClass() {
     return this.lessNoticeableBorder ? "outline-0" : "outline outline-1";
@@ -94,26 +102,17 @@ export class RelegendableComponent {
 
   frontLipClass(): string {
     switch (this.relegendable.frontLipLegendPosition) {
-      case FrontLipLegendPositionOptions.centre:
+      case LegendPositionOptions.centre:
       default:
         return "flex items-center justify-center";
-      case FrontLipLegendPositionOptions.left:
+      case LegendPositionOptions.left:
         return "flex items-center justify-start";
-      case FrontLipLegendPositionOptions.right:
+      case LegendPositionOptions.right:
         return "flex items-center justify-end";
     }
   }
 
   fontSizeName(legendFontSize: number): string {
     return `legend-${legendFontSize.toString().replace(".", "-")}px`;
-  }
-
-  onPositionSelected(position: LegendPositionOptions) {
-    this.relegendable.legendPosition = position;
-  }
-
-  onLipPositionSelected(position: LegendPositionOptions) {
-    this.relegendable.frontLipLegendPosition =
-      position as string as FrontLipLegendPositionOptions;
   }
 }

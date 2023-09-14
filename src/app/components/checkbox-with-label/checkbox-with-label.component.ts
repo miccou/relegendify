@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 @Component({
   selector: "app-checkbox-with-label",
   template: `
-    <label class="relative inline-flex cursor-pointer items-center">
+    <label class="relative inline-flex cursor-pointer items-center w-44">
       <input
         type="checkbox"
         [ngModel]="checked"
