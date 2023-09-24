@@ -24,10 +24,10 @@ export class Relegendable {
   legendPosition: LegendPositionOptions = LegendPositionOptions.topLeft;
   legendFontSize: number = 10;
   legendAlign: LegendAlignOptions = LegendAlignOptions.alignCentre;
-  legendColour: string = "#123456";
-  keycapColour: string = "#abcdef";
-  includeFrontLip: boolean = false; //done
-  frontLipLegend: string = "Text"; //done
+  legendColour: string = DEFAULTS.legendColour;
+  keycapColour: string = DEFAULTS.keycapColour;
+  includeFrontLip: boolean = false; 
+  frontLipLegend: string = "Text"; 
   frontLipLegendPosition: LegendPositionOptions = LegendPositionOptions.centre;
   frontLipLegendFontSize: number = 6;
 
@@ -40,4 +40,10 @@ export class Relegendable {
   addFrontLip() {
     this.includeFrontLip = true;
   }
+}
+
+
+export const DEFAULTS = {
+  legendColour: "#000000",
+  keycapColour: "#ffffff"
 }

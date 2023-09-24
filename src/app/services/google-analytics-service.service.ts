@@ -6,7 +6,7 @@ export const enum CustomEvents {
   print = "print",
 }
 
-declare var gtag: Function;
+declare let gtag: Function;
 
 @Injectable({
   providedIn: "root",
