@@ -43,6 +43,8 @@ export class RelegendableListComponent implements OnInit {
     let newRl = new Relegendable();
     if (this.includeFrontLip) {
       newRl.addFrontLip();
+      newRl.legendColour = this.legendColour;
+      newRl.keycapColour = this.keycapColour;
     }
     this.relegendables.push(newRl);
 
