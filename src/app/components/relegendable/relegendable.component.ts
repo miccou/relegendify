@@ -1,10 +1,8 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   ElementRef,
   EventEmitter,
   Input,
-  OnInit,
   Output,
   ViewChild,
 } from "@angular/core";
@@ -23,11 +21,8 @@ export class RelegendableComponent {
   @Input() relegendable!: Relegendable;
   @Input() lessNoticeableBorder!: boolean;
   @Input() boldLegends!: boolean;
-  @Input() invertColours!: boolean;
   @Output() delete = new EventEmitter();
   @Output() clone = new EventEmitter();
-
-  ngOnInit() {}
 
   ngAfterViewInit() {
     setTimeout(() => {
@@ -36,17 +31,11 @@ export class RelegendableComponent {
   }
 
   get borderClass() {
-    return this.lessNoticeableBorder ? "outline-0" : "outline outline-1";
+    return this.lessNoticeableBorder ? "outline-0" : "outline outline-1 outline-cutty-sark-300/25 outline-dashed";
   }
 
   get boldClass() {
     return this.boldLegends ? "font-semibold" : "font-normal";
-  }
-
-  get colourClass() {
-    return this.invertColours
-      ? "bg-black text-white outline-cutty-sark-800"
-      : "bg-white text-black outline-cutty-sark-100";
   }
 
   relegendableClass(): { parent: string; child: string } {

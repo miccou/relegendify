@@ -3,7 +3,7 @@
     class="container max-w-6xl flex-row flex-wrap items-center justify-center">
     <!-- controls for all relegendables -->
     <div
-      class="mx-auto my-6 flex w-[420px] max-w-lg basis-full flex-col items-center gap-2 overflow-clip rounded-md bg-aquamarine-100 shadow print:hidden">
+      class="mx-auto my-6 flex w-[560px] basis-full flex-col items-center gap-2 overflow-clip rounded-md bg-aquamarine-100 shadow print:hidden">
       <div
         class="flex w-full flex-row justify-between gap-2 bg-cutty-sark-700 p-2 text-white">
         <div>Controls</div>
@@ -27,10 +27,6 @@
           <app-checkbox-with-label
             [(checked)]="boldLegends"
             [label]="'Bold legends'"></app-checkbox-with-label>
-
-          <!-- <app-checkbox-with-label
-        [(checked)]="invertColours"
-        [label]="'Invert colours (white on black)'"></app-checkbox-with-label> -->
         </div>
         <div class="flex min-w-fit flex-col gap-4">
           <div class="flex grow-0 flex-row items-start justify-start gap-4">
@@ -86,9 +82,12 @@
           <div class="mt-1 mb-2 h-px w-full bg-cutty-sark-200"></div>
           <app-button-small (click)="applyToAll()">Apply</app-button-small>
         </div>
-        <!-- <div class="flex flex-col gap-2">
-        Background colour: [colour picker] Legend colour: [colour picker]
-      </div> -->
+        <div class="flex flex-col gap-2">
+        <div>Legend: <div class="w-24 h-8 rounded"  onkeydown="return false;" autocomplete="off" type="text"  [(colorPicker)]="legendColour" [style.background]="legendColour" [cpOutputFormat]="'hex'" [cpAlphaChannel]="'disabled'" [cpPosition]="'bottom'" (colorPickerChange)="setLegendColour($event)"></div></div>
+        <div>Background: <div  class="w-24 h-8 rounded" onkeydown="return false;" autocomplete="off"  type="text" [(colorPicker)]="keycapColour" [style.background]="keycapColour" [cpOutputFormat]="'hex'" [cpAlphaChannel]="'disabled'" [cpPosition]="'bottom'" (colorPickerChange)="setKeycapColour($event)"></div></div>
+
+
+      </div>
       </div>
     </div>
 
@@ -132,7 +131,6 @@
       [relegendable]="rel"
       [lessNoticeableBorder]="lessNoticeableBorder"
       [boldLegends]="boldLegends"
-      [invertColours]="invertColours"
       (delete)="delete(rel)"
       (clone)="clone(rel)">
     </app-relegendable>

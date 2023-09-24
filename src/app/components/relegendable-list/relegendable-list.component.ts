@@ -4,6 +4,7 @@ import {
   GoogleAnalyticsService,
 } from "src/app/services/google-analytics-service.service";
 import {
+  DEFAULTS,
   LegendAlignOptions,
   LegendPositionOptions,
   Relegendable,
@@ -19,7 +20,6 @@ export class RelegendableListComponent implements OnInit {
   includeFrontLip = false;
   lessNoticeableBorder = false;
   boldLegends = false;
-  invertColours = false;
 
   legendPosition = LegendPositionOptions.topLeft;
   legendAlign = LegendAlignOptions.alignCentre;
@@ -30,6 +30,9 @@ export class RelegendableListComponent implements OnInit {
 
   hideState: "Hide" | "Show" = "Hide";
 
+  legendColour = DEFAULTS.legendColour;
+  keycapColour = DEFAULTS.keycapColour;
+
   constructor(private googleAnalyticsService: GoogleAnalyticsService) {}
 
   ngOnInit() {
@@ -37,7 +40,7 @@ export class RelegendableListComponent implements OnInit {
   }
 
   addNew() {
-    var newRl = new Relegendable();
+    let newRl = new Relegendable();
     if (this.includeFrontLip) {
       newRl.addFrontLip();
     }
@@ -84,5 +87,17 @@ export class RelegendableListComponent implements OnInit {
     } else {
       this.hideState = "Hide";
     }
+  }
+
+  setLegendColour(colour: string){
+    this.relegendables.forEach((rl) => {
+      rl.legendColour = colour;
+    });
+  }
+
+  setKeycapColour(colour:string){
+    this.relegendables.forEach((rl) => {
+      rl.keycapColour = colour;
+    });
   }
 }

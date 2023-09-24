@@ -11,10 +11,10 @@
       [ngClass]="
         fontSizeName(relegendable.legendFontSize) +
         ' ' +
-        borderClass +
-        ' ' +
-        colourClass
-      ">
+        borderClass
+      "
+      [ngStyle]="{'color': relegendable.legendColour, 'background-color': relegendable.keycapColour}"
+      >
       <div
         class="h-full w-full overflow-clip"
         [ngClass]="relegendableClass().parent">
@@ -31,10 +31,10 @@
       [ngClass]="
         fontSizeName(relegendable.frontLipLegendFontSize) +
         ' ' +
-        borderClass +
-        ' ' +
-        colourClass
-      ">
+        borderClass
+      "
+      [ngStyle]="{'color': relegendable.legendColour, 'background-color': relegendable.keycapColour}"
+      >
       <div
         class="h-full w-full overflow-clip"
         [ngClass]="frontLipClass() + ' ' + boldClass">
@@ -121,5 +121,10 @@
     <app-button-small (click)="clone.emit()">
       <img src="./assets/img/clone.svg" /> Clone
     </app-button-small>
+  </div>
+
+  <div class="text-sm border-2">
+    {{ relegendable.legendColour }}<br/>
+    {{ relegendable.keycapColour }}
   </div>
 </div>
