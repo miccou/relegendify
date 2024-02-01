@@ -12,7 +12,6 @@ export class HomeComponent {
   constructor(private googleAnalyticsService: GoogleAnalyticsService) {}
 
   print() {
-    window.print();
     this.googleAnalyticsService.trackEvent(CustomEvents.print);
   }
 }

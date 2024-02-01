@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { ColorPickerModule } from 'ngx-color-picker';
+import { NgxPrintModule } from 'ngx-print';
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AlignPickerComponent } from "./components/align-picker/align-picker.component";
@@ -35,7 +36,8 @@ import { HomeComponent } from "./pages/home/home.component";
     AppRoutingModule,
     FormsModule,
     CommonModule,
-    ColorPickerModule
+    ColorPickerModule,
+    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent],
